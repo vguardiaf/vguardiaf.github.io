@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1E3330">
+<meta name="author" content="Víctor Guardia">
+<link rel="canonical" href="https://vguardiaf.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231E3330%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2242%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23F2EFE8%22%3EVG%3C%2Ftext%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2214%22%20r%3D%225%22%20fill%3D%22%23C1A27B%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vguardiaf.github.io/">
+<meta property="og:title" content="Víctor Guardia · Política pública basada en evidencia">
+<meta property="og:description" content="Politólogo. Diseño e implementación de políticas públicas basadas en evidencia para lograr cambios tangibles en las poblaciones más vulnerables.">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Víctor Guardia</title>
+<meta name="description" content="Víctor Guardia, politólogo. Gestión pública y análisis de datos para programas sociales y de salud en el Perú.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Public+Sans:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: "cuaderno de campo" — ridgelines of the Andes behind the name, a Gantt of the career
+   that doubles as the CV, projects led by their key figure, and a passport page for the world. */
+/* Single light look on purpose: the owner asked for a light page in every theme. */
+:root{
+  color-scheme:light;
+  /* Modern Policy palette: verde petróleo, salvia, arena dorada, marfil, carbón */
+  --paper:#F2EFE8;
+  --card:#FAF8F3;
+  --tint:#E6EBE7;
+  --ink:#243B38;
+  --text:#303C43;
+  --muted:#56645F;
+  --line:#DCD6CA;
+  --accent:#243B38;
+  --accent-soft:#E2E8E4;
+  --on-accent:#F2EFE8;
+  --sage:#718A80;
+  --gold:#C1A27B;
+  --gold-ink:#8A6A3F;
+  --land:#DDD8CD;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Public Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --s-hero:clamp(3.1rem,11vw,8.4rem);
+  --s-h2:clamp(1.9rem,4.4vw,3rem);
+  --s-h3:1.2rem;
+  --s-body:1.0625rem;
+  --s-small:.875rem;
+  --s-micro:.75rem;
+  --wrap:1180px;
+  --r:14px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--paper);color:var(--text);font-family:var(--f-body);font-size:var(--s-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+h1,h2,h3{color:var(--ink);font-family:var(--f-display);margin:0;line-height:1.05;text-wrap:balance;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono);font-size:var(--s-micro);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sec{padding-block:clamp(64px,10vw,128px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head h2{font-size:var(--s-h2);letter-spacing:-.025em;margin-top:12px}
+.sec-head p{color:var(--muted);max-width:56ch}
+@media (max-width:820px){.sec-head{grid-template-columns:minmax(0,1fr)}}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{font-family:var(--f-display);font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}
+.mark i{width:10px;height:10px;border-radius:50%;background:var(--gold);display:block}
+.topnav{display:flex;gap:4px}
+.topnav a{text-decoration:none;font-size:var(--s-small);padding:8px 12px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
+.topnav a:hover{color:var(--ink);background:var(--card)}
+.top .cta{background:var(--ink);color:var(--paper);text-decoration:none;font-size:var(--s-small);font-weight:600;padding:9px 16px;border-radius:999px}
+@media (max-width:860px){.topnav{display:none}}
+
+.tabs{display:none}
+@media (max-width:860px){
+  .tabs{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:25;
+    background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+    padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+  .tabs a{display:grid;justify-items:center;gap:2px;text-decoration:none;font-size:.6875rem;color:var(--muted);padding:6px 0;min-height:48px;border-radius:10px}
+  .tabs a.on{color:var(--accent)}
+  .tabs svg{width:22px;height:22px}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+  .top .cta{display:none}
+}
+
+/* Hero ground: a quiet data-point grid that fades out, over a soft sage disc on the right */
+/* Hero "Mapa de datos": deep petróleo ground, faint technical grid, dot-matrix South America (canvas) */
+.hero{position:relative;overflow:hidden;background:#1E3330;color:#C9D3CE}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(242,239,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.05) 1px,transparent 1px);background-size:32px 32px}
+#heromap{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(56px,9vw,120px) clamp(56px,8vw,104px)}
+.hero .mono{color:#9FB2AA}
+.hero h1{color:#F2EFE8}
+.hero h1 span{color:var(--gold)!important}
+.hero .lede{color:#C9D3CE}
+.hero .btn{background:transparent;border-color:rgba(242,239,232,.55);color:#F2EFE8}
+.hero .btn:hover{border-color:#F2EFE8}
+.hero .btn.solid{background:var(--gold);border-color:var(--gold);color:#1E3330}
+.hero .facts{background:transparent!important;border-radius:0;padding:0;border-top:1px solid rgba(193,162,123,.45);max-width:620px}
+.hero .facts div{padding:16px 20px 0 0!important;border-left:0}
+.hero .facts div+div{padding-left:20px!important;border-left:1px solid rgba(242,239,232,.12)}
+.hero .facts span{color:#9FB2AA!important}
+@media (max-width:560px){.hero .facts div+div{padding-left:12px!important}.hero .facts div{padding-right:8px!important}}
+.hero .mono{display:flex;gap:14px;flex-wrap:wrap}
+.hero h1{font-size:var(--s-hero);letter-spacing:-.045em;font-weight:800;margin-top:18px;line-height:.9}
+.hero h1 span{display:block;font-weight:300;color:var(--sage);font-size:clamp(1.7rem,4.6vw,3.6rem);letter-spacing:-.03em;line-height:1.05;margin-top:.35em;max-width:16ch}
+.hero .lede{font-size:clamp(1.15rem,2.2vw,1.45rem);max-width:34ch;margin-top:28px;line-height:1.45}
+.hero .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:var(--s-small);padding:13px 22px;border-radius:999px;min-height:48px;border:1.5px solid var(--ink);background:var(--paper);transition:transform .2s,background .2s,color .2s}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(3px)}
+.facts{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(40px,6vw,72px);max-width:680px;background:var(--ink);color:var(--on-accent);border-radius:var(--r);padding:6px 4px}
+.facts div{padding:14px 18px;border-left:1px solid rgba(255,255,255,.22)}
+.facts span{color:rgba(255,255,255,.82)!important}
+.facts div:first-child{border-left:0}
+.facts b{color:var(--gold);display:block;font-family:var(--f-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.facts span{font-size:var(--s-small);color:var(--muted);line-height:1.35;display:block;margin-top:6px}
+@media (max-width:560px){.facts div{padding:12px 10px}.facts span{font-size:.8125rem}}
+
+.profile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px 64px}
+.profile .big{font-family:var(--f-display);font-size:clamp(1.45rem,2.8vw,2.05rem);line-height:1.3;letter-spacing:-.015em;font-weight:500}
+.profile .big em{font-style:normal;color:var(--gold-ink)}
+.prose{display:grid;gap:14px;margin-top:22px;color:var(--muted);max-width:66ch}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;list-style:none;padding:0}
+.skills li{font-size:var(--s-small);padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+@media (max-width:820px){.profile{grid-template-columns:minmax(0,1fr)}}
+
+/* Career: a year rail on top, one slide per job below, arrows at the sides */
+.rail{position:relative;height:56px;margin:0 22px 18px}
+.rail .base{position:absolute;left:0;right:0;top:20px;height:2px;background:var(--line);border-radius:2px}
+.rail .fill{position:absolute;left:0;top:20px;height:2px;background:var(--gold);border-radius:2px;transition:width .35s ease}
+.rail .yr{position:absolute;top:34px;transform:translateX(-50%);font-family:var(--f-mono);font-size:var(--s-micro);color:var(--muted)}
+.rail button{position:absolute;top:21px;transform:translate(-50%,-50%);width:28px;height:28px;border:0;padding:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.rail button::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--card);border:2px solid var(--muted);transition:transform .2s,background .2s,border-color .2s}
+.rail button.past::after{border-color:var(--gold);background:var(--gold)}
+.rail button.on::after{transform:scale(1.5);border-color:var(--ink);background:var(--card);box-shadow:0 0 0 4px var(--accent-soft)}
+.car{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:12px;align-items:center}
+.arrow{appearance:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s,opacity .2s}
+.arrow:hover{background:var(--ink);color:var(--paper)}
+.arrow[aria-disabled="true"]{opacity:.3;cursor:default}
+.arrow[aria-disabled="true"]:hover{background:var(--card);color:var(--ink)}
+.arrow svg{width:20px;height:20px}
+.viewport{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;border-radius:var(--r)}
+.viewport::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px clamp(24px,4vw,56px);align-content:start;min-width:0}
+.slide .when{font-family:var(--f-mono);font-size:var(--s-micro);letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink)}
+.slide .dur{font-size:var(--s-small);color:var(--muted);margin-top:4px}
+.slide h3{font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.025em;margin-top:18px;line-height:1.1}
+.slide .org{font-size:1.02rem;color:var(--muted);margin-top:10px;line-height:1.4}
+.slide .sdesc{margin:0;align-self:start;font-size:clamp(1.02rem,1.4vw,1.125rem);line-height:1.75;color:var(--text);max-width:62ch}
+.dark .slide{color:var(--text)}
+.dark .slide h3{color:var(--ink)}
+.dark .slide .org,.dark .slide .dur{color:var(--muted)}
+.slide li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;line-height:1.55}
+.slide li::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--gold);margin-top:.6em}
+.slide .tagnow{display:inline-block;font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:2px 8px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.count{display:flex;justify-content:center;gap:8px;margin-top:16px;font-family:var(--f-mono);font-size:var(--s-micro);color:var(--muted)}
+.count b{color:var(--ink);font-weight:500}
+.count{align-items:center}
+.playbtn{appearance:none;margin-left:10px;width:32px;height:32px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;display:grid;place-items:center;cursor:pointer;pointer-events:auto;padding:0}
+.playbtn svg{width:14px;height:14px;fill:currentColor}
+.playbtn .i-play{display:none}
+.playbtn[aria-pressed="false"] .i-play{display:block}
+.playbtn[aria-pressed="false"] .i-pause{display:none}
+.dark .playbtn{color:#F2EFE8;border-color:rgba(242,239,232,.45)}
+.dark .playbtn:hover{background:var(--gold);border-color:var(--gold);color:#1E3330}
+.autobar{max-width:200px;height:2px;margin:12px auto 0;background:rgba(242,239,232,.14);border-radius:2px;overflow:hidden}
+.autobar span{display:block;height:100%;width:0;background:var(--gold)}
+.autobar span.run{width:100%;transition:width 5s linear}
+@media (max-width:760px){
+  .slide{grid-template-columns:minmax(0,1fr)}
+  .car{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .viewport{grid-column:1 / -1;grid-row:1}
+  .arrow.prev{grid-row:2;justify-self:start}
+  .arrow.next{grid-row:2;justify-self:end}
+  .count{margin-top:-36px;pointer-events:none}
+  .rail{margin-inline:12px}
+  .rail .full{display:none}
+}
+.rail .short{display:none}
+@media (max-width:760px){.rail .short{display:inline}}
+
+.grid-p{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;grid-auto-flow:dense}
+.proj{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:border-color .25s,transform .25s}
+.proj:hover{border-color:var(--accent);transform:translateY(-3px)}
+.proj .fig{font-family:var(--f-display);font-weight:700;font-size:clamp(2.6rem,5vw,3.4rem);letter-spacing:-.04em;line-height:.95;color:var(--gold-ink);font-variant-numeric:tabular-nums}
+.proj .figl{font-size:var(--s-small);color:var(--muted);margin-top:-6px}
+.proj h3{font-size:var(--s-h3);line-height:1.3;font-weight:600;letter-spacing:-.01em}
+.proj .tools{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.proj .tools li{font-family:var(--f-mono);font-size:.6875rem;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--ink)}
+.proj .links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.proj .links a{font-size:var(--s-small);font-weight:600;text-decoration:none;color:var(--accent);min-height:36px;display:inline-flex;align-items:center}
+.proj .links a:hover{text-decoration:underline;text-underline-offset:3px}
+/* Featured cards: media alone on one side, all the information on the other */
+.proj.lead{grid-column:1 / -1;display:grid;gap:28px clamp(28px,5vw,64px);align-items:center;background:var(--card);padding:clamp(16px,2.5vw,24px)}
+.proj.lead.is-video{grid-template-columns:minmax(0,380px) minmax(0,1fr)}
+.proj.lead.is-imgs{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.proj.lead .media{background:var(--ink);border-radius:12px;padding:clamp(16px,3vw,28px);display:grid;place-items:center;min-width:0;height:100%}
+.proj.lead .media .reel{justify-items:center;margin:0}
+.proj.lead .media .reel video{max-width:300px}
+.proj.lead .media figcaption{color:rgba(242,239,232,.7)}
+.proj.lead .media .sat{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.proj.lead .media .sat img{aspect-ratio:3/4}
+.proj.lead .media .sat b{color:var(--on-accent)}
+.drop{background:var(--ink);border-radius:12px;padding:20px 16px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.drop img{width:84px;height:84px;display:block}
+.drop .arr{color:var(--gold);font-size:1.4rem}
+.chips2{display:grid;gap:4px}
+.chips2 span{font-family:var(--f-mono);font-size:.6875rem;padding:3px 8px;border-radius:5px;background:rgba(242,239,232,.12);color:var(--on-accent);text-align:center}
+.chips2.out span{background:var(--gold);color:var(--ink);font-size:.875rem;padding:8px 12px;font-weight:500}
+.term{margin:10px 0 0;background:#1C2B29;color:#D9E0DC;border-radius:10px;padding:14px 16px;font:400 .75rem/1.6 var(--f-mono);overflow-x:auto;white-space:pre}
+.term i{font-style:normal;color:#8FC7A3}
+.cap{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);margin-top:6px}
+.proj.wide .figrow{display:grid;gap:8px}
+.proj.wide .figrow .figl{margin:0}
+.proj.lead.is-charts{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);border-color:var(--gold)}
+.proj.lead.is-charts .media .sat{grid-template-columns:minmax(0,1fr);gap:16px}
+.proj.lead.is-charts .media .sat img{aspect-ratio:auto;height:auto;object-fit:contain;background:#FCFCFB}
+.proj.lead .info{padding-block:8px;padding-right:clamp(0px,2vw,16px)}
+.proj.lead .figrow{display:grid;gap:8px}
+.proj.lead .fig{font-size:clamp(3.2rem,6vw,5rem)}
+.proj.lead .figrow .figl{margin:0}
+.proj.lead h3{font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1.25}
+@media (max-width:760px){.proj.lead.is-video,.proj.lead.is-imgs{grid-template-columns:minmax(0,1fr)}.proj.lead .media .reel video{max-width:240px}}
+.proj .col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.proj.full{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px 48px;border-color:var(--gold);background:var(--card)}
+.proj.full .fig{font-size:clamp(4rem,9vw,7rem)}
+.proj .desc{color:var(--muted);font-size:.95rem;line-height:1.6}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;font-size:.95rem;line-height:1.55;color:var(--muted)}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-family:var(--f-mono);font-size:.75rem;display:grid;place-items:center}
+.steps b{color:var(--ink);font-weight:600}
+.reel{margin:8px 0 0;display:grid;gap:8px;justify-items:start}
+.reel video{width:100%;max-width:300px;height:auto;aspect-ratio:9/16;border-radius:14px;background:var(--ink);display:block;object-fit:cover}
+.reel figcaption,.sat figcaption{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.04em;color:var(--muted)}
+.sat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sat figure{margin:0;display:grid;gap:6px}
+.sat img{width:100%;max-width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;display:block;background:var(--land)}
+.sat b{color:var(--ink);font-weight:500}
+@media (max-width:620px){.reel{justify-items:center}.reel video{max-width:260px}}
+.shot{width:100%;max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff;margin-top:8px}
+.quad{width:100%;max-width:240px;height:auto;margin-top:8px}
+.likes{list-style:none;padding:0;margin:0 0 32px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.likes li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 16px;display:grid;gap:6px;align-content:start}
+.likes svg{width:28px;height:28px;color:var(--gold-ink);margin-bottom:6px}
+.likes b{font-family:var(--f-display);font-size:1.1rem;font-weight:600;line-height:1.2}
+.likes span{font-size:var(--s-small);color:var(--muted);line-height:1.4}
+@media (max-width:980px){.likes{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.likes{grid-template-columns:repeat(2,minmax(0,1fr))}.likes li:first-child{grid-column:1 / -1}}
+.trips{display:grid;gap:20px}
+.cont .mono{margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{appearance:none;font:500 var(--s-small)/1.2 var(--f-body);color:var(--ink);background:var(--card);border:1px dashed var(--sage);border-radius:999px;padding:8px 12px;min-height:36px;cursor:pointer;transition:background .2s,color .2s}
+.chip:hover,.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-style:solid}
+#map .dot{cursor:pointer}
+#map circle.sel{fill:var(--ink)}
+@media (max-width:760px){.proj.full{grid-template-columns:minmax(0,1fr)}}
+.proj.wide{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:stretch}
+@media (max-width:980px){.grid-p{grid-template-columns:repeat(2,minmax(0,1fr))}.proj.wide{grid-column:1 / -1;display:flex}}
+@media (max-width:620px){.grid-p{grid-template-columns:minmax(0,1fr)}}
+
+.langs{display:grid;border-top:1px solid var(--line)}
+.lang{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr) minmax(0,170px);gap:8px 24px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.lang b{font-family:var(--f-display);font-size:1.35rem;font-weight:600;letter-spacing:-.02em}
+.lang .cert{font-size:var(--s-small);color:var(--muted);text-align:right}
+.cefr{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cefr span{height:30px;border-radius:6px;background:var(--line);display:grid;place-items:center;font-family:var(--f-mono);font-size:.6875rem;color:var(--muted)}
+.cefr span.on{background:var(--ink);color:var(--paper)}
+.cefr span.top{background:var(--accent);color:var(--on-accent)}
+@media (max-width:700px){.lang{grid-template-columns:minmax(0,1fr) auto}.cefr{grid-column:1 / -1;grid-row:2}.lang .cert{grid-row:1;grid-column:2}}
+
+.world{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:start}
+.mapcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;min-width:0}
+#map{width:100%;height:auto;display:block}
+#map path{transition:fill .2s}
+#map path.v{cursor:pointer}
+#map path.v:hover,#map path.sel{fill:var(--ink)}
+.maptip{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap;padding:10px 6px 2px;border-top:1px solid var(--line);margin-top:8px;min-height:44px}
+.maptip b{font-family:var(--f-display);font-size:1.15rem}
+.maptip span{font-size:var(--s-small);color:var(--muted)}
+.passport{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stamp{appearance:none;font:inherit;color:var(--accent);background:transparent;border:2px dashed currentColor;border-radius:12px;padding:14px 12px;text-align:left;cursor:pointer;display:grid;gap:2px;align-content:center;transform:rotate(var(--rot,0deg));transition:transform .25s,background .25s;min-height:104px;min-width:0}
+.stamp:hover,.stamp[aria-pressed="true"]{transform:rotate(0deg) scale(1.03);background:var(--accent-soft)}
+.stamp .c{font-family:var(--f-display);font-weight:800;font-size:1.2rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.1}
+.stamp .m{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.05em;text-transform:uppercase;line-height:1.4}
+.stamp.todo{color:var(--muted);border-style:dotted;cursor:default}
+.stamp.todo:hover{transform:rotate(var(--rot,0deg));background:transparent}
+.note{font-size:var(--s-small);color:var(--muted);margin-top:16px}
+@media (max-width:900px){.world{grid-template-columns:minmax(0,1fr)}}
+
+.edu li.now{border-top-color:var(--gold)}
+.edu li.now .mono{color:var(--gold-ink)}
+.logos{list-style:none;padding:0;margin:40px 0 0;display:flex;flex-wrap:wrap;gap:12px}
+.logos li{width:64px;height:64px;border-radius:16px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;transition:transform .2s,border-color .2s}
+.logos li:hover{transform:translateY(-3px);border-color:var(--ink)}
+.logos svg{width:30px;height:30px}
+.edu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 16px;list-style:none;padding:0;margin:0}
+.edu li{border-top:2px solid var(--ink);padding-top:16px;display:grid;gap:6px;align-content:start}
+.edu b{font-weight:600;line-height:1.35}
+.edu span{font-size:var(--s-small);color:var(--muted)}
+@media (max-width:980px){.edu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.edu{grid-template-columns:minmax(0,1fr)}}
+.tools-line{margin-top:40px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:var(--s-small)}
+.tools-line b{font-weight:600}
+
+/* Dark bands (trayectoria, contacto) echo the hero: petróleo ground + technical grid */
+.dark{position:relative;background:#1E3330;color:#C9D3CE;overflow:hidden}
+.dark::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(242,239,232,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.045) 1px,transparent 1px);background-size:32px 32px}
+.dark .wrap{position:relative;z-index:1}
+.dark h2{color:#F2EFE8}
+.dark .mono{color:#9FB2AA}
+.dark .sec-head p{color:#C9D3CE}
+.dark .rail .base{background:rgba(242,239,232,.18)}
+.dark .rail .yr{color:#9FB2AA}
+.dark .rail button::after{background:#1E3330;border-color:#9FB2AA}
+.dark .rail button.past::after{background:var(--gold);border-color:var(--gold)}
+.dark .rail button.on::after{background:#1E3330;border-color:var(--gold);box-shadow:0 0 0 5px rgba(193,162,123,.22)}
+.dark .arrow{background:transparent;border-color:rgba(242,239,232,.55);color:#F2EFE8}
+.dark .arrow:hover{background:var(--gold);border-color:var(--gold);color:#1E3330}
+.dark .arrow[aria-disabled="true"]:hover{background:transparent;color:#F2EFE8;border-color:rgba(242,239,232,.55)}
+.dark .slide{border:0;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.dark .count{color:#9FB2AA}
+.dark .count b{color:#F2EFE8}
+.contact .wrap{padding-block:clamp(72px,11vw,136px);display:grid;gap:32px}
+.contact h2{font-size:clamp(2.4rem,7vw,5.2rem);letter-spacing:-.04em;font-weight:800;line-height:.95}
+.contact h2 span{display:block;color:var(--gold);font-weight:300}
+.mailrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mail{font-family:var(--f-display);font-size:clamp(1.2rem,3.4vw,2rem);font-weight:500;letter-spacing:-.02em;overflow-wrap:anywhere;user-select:all;color:#F2EFE8}
+.copy{appearance:none;font:600 var(--s-small)/1 var(--f-body);background:var(--gold);color:#1E3330;border:0;border-radius:999px;padding:12px 18px;cursor:pointer;min-height:44px}
+.socials{display:flex;flex-wrap:wrap;gap:10px}
+.socials a{text-decoration:none;border:1.5px solid rgba(242,239,232,.45);color:#F2EFE8;border-radius:999px;padding:11px 18px;font-size:var(--s-small);font-weight:600;min-height:44px;display:inline-flex;align-items:center;transition:background .2s,color .2s,border-color .2s}
+.socials a:hover{background:#F2EFE8;border-color:#F2EFE8;color:#1E3330}
+.socials a{gap:10px}
+.sico{width:18px;height:18px;fill:currentColor;flex:none}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid rgba(242,239,232,.14);padding-top:24px;font-size:var(--s-micro);color:#9FB2AA}
+/* Rhythm: gold rule before every eyebrow, livelier cards */
+.sec-head .mono::before,.profile .mono::before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px;transform:translateY(-2px)}
+.sec-head h2{font-size:clamp(2.1rem,5vw,3.6rem)}
+.likes li,.edu li,.proj{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+.likes li:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 30px rgba(36,59,56,.1)}
+.proj:hover{border-color:var(--gold);box-shadow:0 18px 40px rgba(36,59,56,.12)}
+#proyectos{background:#E9ECE7!important}
+.profile .big{font-size:clamp(1.6rem,3.2vw,2.4rem)}
+.profile{border-left:3px solid var(--gold);padding-left:clamp(16px,3vw,40px)}
+/* Scroll reveal: content is always visible; it only rises a little into place */
+.rv{transform:translateY(22px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{transform:none}
+@media (prefers-reduced-motion:reduce){.rv{transform:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#inicio"><i aria-hidden="true"></i>Víctor Guardia</a>
+    <nav class="topnav" aria-label="Secciones">
+      <a href="#perfil">Perfil</a><a href="#trayectoria">Trayectoria</a><a href="#formacion">Formación</a><a href="#proyectos">Proyectos</a><a href="#sobre-mi">Sobre mí</a>
+    </nav>
+    <a class="cta" href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio" aria-labelledby="h-hero">
+  <canvas id="heromap" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="mono"><span>12.05° S · 77.04° O</span><span>Lima, Perú</span></p>
+    <h1 id="h-hero">Víctor Guardia <span>Política pública basada en evidencia</span></h1>
+    <p class="lede">Politólogo. Diseño e implemento políticas públicas a partir de la evidencia, para lograr cambios tangibles en la vida de las poblaciones más vulnerables.</p>
+    <div class="actions">
+      <a class="btn solid" href="#proyectos">Ver proyectos <span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn" href="#trayectoria">Trayectoria</a>
+    </div>
+    <div class="facts" role="list">
+      <div role="listitem"><b>10+</b><span>años en gestión pública</span></div>
+      <div role="listitem"><b>9</b><span>instituciones públicas y de cooperación</span></div>
+      <div role="listitem"><b>8</b><span>proyectos de datos y evidencia</span></div>    </div>
+  </div>
+</section>
+
+<section class="sec" id="perfil" aria-labelledby="h-perfil">
+  <div class="wrap profile">
+    <div><p class="mono">Perfil</p><h2 id="h-perfil" class="vh">Perfil</h2></div>
+    <div>
+      <p class="big">Llevo más de diez años trabajando donde la política pública se encuentra con la realidad: en ministerios, en <em>gobiernos regionales y locales</em> y en el territorio.</p>
+      <div class="prose">
+        <p>He diseñado y acompañado intervenciones de salud, desarrollo infantil, protección social y prevención de la violencia, siempre con la misma pregunta: ¿está llegando el servicio a quien más lo necesita y está cambiando algo en su vida? Para responderla uso datos. Defino indicadores, reviso su calidad, encuentro brechas y las convierto en propuestas de mejora que los equipos pueden aplicar.</p>
+        <p>Mi experiencia combina el Estado peruano (MIDIS, MINSA, INABIF, SERVIR) con la cooperación internacional (UNESCO, GIZ, Naciones Unidas) y el sector privado. Hoy fortalezco capacidades en gestión y presupuesto por resultados, y amplío mis herramientas con ciencia de datos para que las decisiones públicas se apoyen en mejor evidencia.</p>
+      </div>
+      <ul class="skills">
+        <li>Asistencia técnica subnacional</li><li>Seguimiento de metas e indicadores</li><li>Protección social y salud pública</li><li>Políticas basadas en evidencia</li><li>Articulación intergubernamental</li><li>Gestión de proyectos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="trayectoria" aria-labelledby="h-tray">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">Trayectoria · 2013–2026</p><h2 id="h-tray">Trece años dentro y junto al Estado</h2></div>
+      <p>Ministerios, cooperación internacional y trabajo de campo con comunidades. Recorre cada etapa, de UNESCO en 2013 a hoy, y mira qué hice en cada una.</p>
+    </div>
+    <div class="rail" id="rail" aria-label="Línea de tiempo de cargos"></div>
+    <div class="car" role="region" aria-roledescription="carrusel" aria-label="Cargos, del más antiguo al actual">
+      <button class="arrow prev" id="prev" type="button" aria-label="Cargo anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="viewport" id="viewport" tabindex="0"></div>
+      <button class="arrow next" id="next" type="button" aria-label="Cargo siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <p class="count" id="count" aria-live="off"><b id="ci">1</b><span>/</span><span id="cn">11</span><button type="button" class="playbtn" id="play" aria-pressed="true" aria-label="Pausar el avance automático"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button></p>
+    <div class="autobar" aria-hidden="true"><span id="autofill"></span></div>
+  </div>
+</section>
+
+<section class="sec" id="formacion" aria-labelledby="h-edu">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">Formación · 2012–2027</p><h2 id="h-edu">Estudios y especialización</h2></div>
+      <p>De la ciencia política a la ciencia de datos: una formación que sigue creciendo.</p>
+    </div>
+    <ul class="edu">
+      <li><span class="mono">2012 · Barcelona</span><b>Licenciatura en Ciencias Políticas y de la Administración</b><span>Universidad Autónoma de Barcelona</span></li>
+      <li><span class="mono">2014 · Lima</span><b>IV Diplomado en Relaciones Internacionales</b><span>Academia Diplomática del Perú</span></li>
+      <li><span class="mono">2016 · Lima</span><b>Programa de Gobernabilidad, Gerencia Política y Gestión Pública</b><span>Pontificia Universidad Católica del Perú</span></li>
+      <li class="now"><span class="mono">En curso · termina en 2027</span><b>Diplomatura de Especialización en Ciencia de Datos para las Ciencias Sociales y Gestión Pública</b><span>Pontificia Universidad Católica del Perú</span></li>
+    </ul>
+    <ul class="logos" aria-label="Herramientas">
+      <li title="Microsoft Office"><svg viewBox="0 0 24 24" role="img" aria-label="Microsoft Office"><path fill="#D83B01" d="M21.53 4.306v15.363q0 .807-.472 1.433-.472.627-1.253.85l-6.888 1.974q-.136.037-.29.055-.156.019-.293.019-.396 0-.72-.105-.321-.106-.656-.292l-4.505-2.544q-.248-.137-.391-.366-.143-.23-.143-.515 0-.434.304-.738.304-.305.739-.305h5.831V4.964l-4.38 1.563q-.533.187-.856.658-.322.472-.322 1.03v8.078q0 .496-.248.912-.25.416-.683.651l-2.072 1.13q-.286.148-.571.148-.497 0-.844-.347-.348-.347-.348-.844V6.563q0-.62.33-1.19.328-.571.874-.881L11.07.285q.248-.136.534-.21.285-.075.57-.075.211 0 .38.031.166.031.364.093l6.888 1.899q.384.11.7.329.317.217.547.52.23.305.353.67.125.367.125.764zm-1.588 15.363V4.306q0-.273-.16-.478-.163-.204-.423-.28l-3.388-.93q-.397-.111-.794-.23-.397-.117-.794-.216v19.68l4.976-1.427q.26-.074.422-.28.161-.204.161-.477z"/></svg></li>
+      <li title="Microsoft Project"><svg viewBox="0 0 24 24" role="img" aria-label="Microsoft Project"><rect x="1" y="1" width="22" height="22" rx="4" fill="#31752F"/><rect x="5" y="6" width="9" height="2.6" rx="1.3" fill="#fff"/><rect x="8" y="10.7" width="10" height="2.6" rx="1.3" fill="#fff"/><rect x="11" y="15.4" width="7" height="2.6" rx="1.3" fill="#fff"/></svg></li>
+      <li title="Power BI"><svg viewBox="0 0 24 24" role="img" aria-label="Power BI"><path fill="#F2C811" d="M10 12a1 1 0 0 1 1 1v11H4a1 1 0 0 1-1-1V13a1 1 0 0 1 1-1h6Zm-2-.5V7a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v17h-4.5V13a1.5 1.5 0 0 0-1.5-1.5H8Zm5-6V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v22a1 1 0 0 1-1 1h-3.5V7A1.5 1.5 0 0 0 15 5.5h-2Z"/></svg></li>
+      <li title="Python"><svg viewBox="0 0 24 24" role="img" aria-label="Python"><path fill="#3776AB" d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg></li>
+      <li title="R"><svg viewBox="0 0 24 24" role="img" aria-label="R"><path fill="#276DC3" d="M12 2.746c-6.627 0-12 3.599-12 8.037 0 3.897 4.144 7.144 9.64 7.88V16.26c-2.924-.915-4.925-2.755-4.925-4.877 0-3.035 4.084-5.494 9.12-5.494 5.038 0 8.757 1.683 8.757 5.494 0 1.976-.999 3.379-2.662 4.272.09.066.174.128.258.216.169.149.25.363.372.544 2.128-1.45 3.44-3.437 3.44-5.631 0-4.44-5.373-8.038-12-8.038zm-2.111 4.99v13.516l4.093-.002-.002-5.291h1.1c.225 0 .321.066.549.25.272.22.715.982.715.982l2.164 4.063 4.627-.002-2.864-4.826s-.086-.193-.265-.383a2.22 2.22 0 00-.582-.416c-.422-.214-1.149-.434-1.149-.434s3.578-.264 3.578-3.826c0-3.562-3.744-3.63-3.744-3.63zm4.127 2.93l2.478.002s1.149-.062 1.149 1.127c0 1.165-1.149 1.17-1.149 1.17h-2.478zm1.754 6.119c-.494.049-1.012.079-1.54.088v1.807a16.622 16.622 0 002.37-.473l-.471-.891s-.108-.183-.248-.394c-.039-.054-.08-.098-.111-.137z"/></svg></li>
+      <li title="Claude Code"><svg viewBox="0 0 24 24" role="img" aria-label="Claude Code"><path fill="#D97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="proyectos" aria-labelledby="h-proy" style="background:var(--tint);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">Proyectos de datos</p><h2 id="h-proy">Preguntas que respondí con evidencia</h2></div>
+      <p>Cada proyecto parte de una pregunta concreta y termina en algo que se puede usar: una metodología, una app, un dashboard o un reel.</p>
+    </div>
+    <div class="grid-p" id="projects"></div>
+  </div>
+</section>
+
+<section class="sec" id="sobre-mi" aria-labelledby="h-sobre">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">Sobre mí</p><h2 id="h-sobre">Fuera del trabajo</h2></div>
+      <p>Me gusta viajar, la fotografía, las artes marciales, los rompecabezas y los juegos de mesa y de rol.</p>
+    </div>
+    <ul class="likes">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><b>Viajar</b><span id="tripline">34 países en tres continentes</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><b>Fotografía</b><span>Lugares y personas de cada viaje</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l7-4 7 4-7 4z"/><path d="M12 12v8M8 14l-3 6M16 14l3 6"/></svg><b>Artes marciales</b><span>Disciplina y constancia</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v3a2 2 0 1 0 0 4v2H4zM13 4h7v9h-3a2 2 0 1 0-4 0z"/><path d="M4 15h7v5H4zM13 15h7v5h-7z"/></svg><b>Rompecabezas</b><span>Pieza por pieza, como los datos</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/><circle cx="15" cy="9" r="1.2"/><circle cx="9" cy="15" r="1.2"/></svg><b>Juegos de mesa y de rol</b><span>Estrategia e historias en grupo</span></li>
+    </ul>
+    <div class="world">
+      <div class="mapcard">
+        <svg id="map" viewBox="0 0 960 500" role="img" aria-label="Mapa del mundo con los países que he visitado resaltados"></svg>
+        <div class="maptip" aria-live="polite"><b id="tipc">Toca un país</b><span id="tipm">En verde, los que conozco</span></div>
+      </div>
+      <div class="trips" id="trips"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="contact dark" id="contacto" aria-labelledby="h-con">
+  <div class="wrap">
+    <p class="mono">Contacto</p>
+    <h2 id="h-con">Conversemos <span>sobre gestión pública y datos</span></h2>
+    <div class="mailrow">
+      <span class="mail" id="mail">victor.guardiaf@gmail.com</span>
+      <button class="copy" id="copy" type="button">Copiar correo</button>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/vguardiaf"><svg class="sico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub · vguardiaf</a>
+      <a href="https://www.linkedin.com/in/victor-guardia-981a29b8/"><svg class="sico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn · Víctor Guardia</a>
+    </div>
+    <div class="foot"><span>© 2026 Víctor Guardia</span><span>Lima, Perú</span></div>
+  </div>
+</footer>
+
+<nav class="tabs" aria-label="Secciones">
+  <a href="#inicio" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Inicio</a>
+  <a href="#trayectoria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h7"/></svg>Trayectoria</a>
+  <a href="#proyectos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Proyectos</a>
+  <a href="#sobre-mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Sobre mí</a>
+  <a href="#contacto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Contacto</a>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+(function(){
+var MES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+var NOW=[2026,11];
+var JOBS=[
+ {r:"Consultor",o:"ATIPAY Innovación para la Gestión",s:[2026,6],e:null,b:["Coordino los aspectos administrativos, logísticos y financieros de un proyecto de fortalecimiento de capacidades de servidores públicos y actores privados en gestión y presupuestación basada en resultados, ejecutado con la Children's Investment Fund Foundation (CIFF)."]},
+ {r:"Consultor",o:"Ministerio de Salud",s:[2024,4],e:[2026,3],b:["Brindé asistencia técnica a equipos sectoriales para mejorar procesos e implementar sistemas de información en salud. Monitoreé indicadores y la calidad de los datos de intervenciones dirigidas a poblaciones vulnerables, y coordiné con unidades técnicas y actores institucionales la aplicación de lineamientos y mejoras operativas."]},
+ {r:"Coordinador de Seguridad, Salud y Medioambiente",o:"Nestlé Perú",s:[2023,2],e:[2024,3],b:["Supervisé la implementación de intervenciones de seguridad y salud ocupacional, asegurando el cumplimiento de estándares y la mejora continua. Hice seguimiento de indicadores, identifiqué riesgos y ejecuté acciones correctivas junto a los equipos operativos."]},
+ {r:"Especialista en Políticas Públicas",o:"Ministerio de Desarrollo e Inclusión Social",s:[2019,8],e:[2023,2],b:["Brindé asistencia técnica a gobiernos regionales y locales en la implementación de intervenciones sociales para poblaciones vulnerables, y apoyé el diseño de políticas para la pandemia y la primera infancia. Hice seguimiento a la ejecución, identifiqué brechas y propuse mejoras, en coordinación con las entidades implementadoras, y elaboré reportes técnicos para la toma de decisiones."]},
+ {r:"Consultor",o:"GIZ Perú",s:[2019,2],e:[2019,5],b:["Analicé los procesos operativos de servicios de salud para identificar ineficiencias y oportunidades de mejora, y generé evidencia técnica para optimizar la prestación de servicios en coordinación con actores regionales."]},
+ {r:"Consultor",o:"INABIF",s:[2018,10],e:[2018,12],b:["Apoyé el diseño e implementación de compromisos de gestión con gobiernos regionales para prevenir la violencia contra las mujeres y los integrantes del grupo familiar, y coordiné con actores subnacionales para fortalecer la ejecución de intervenciones financiadas con recursos públicos."]},
+ {r:"Consultor en salud intercultural",o:"Ministerio de Salud",s:[2017,4],e:[2018,12],b:["Coordiné la implementación de la política sectorial de salud intercultural, con prioridad en pueblos indígenas en situación de aislamiento y contacto inicial y en comunidades nativas. Articulé intervenciones de salud con actores regionales, locales y de la sociedad civil en contextos de alta vulnerabilidad y brindé soporte técnico en territorio."]},
+ {r:"Asesor junior",o:"Ministerio de Desarrollo e Inclusión Social",s:[2015,10],e:[2016,12],b:["Brindé soporte técnico al Viceministerio de Políticas y Evaluación Social y al Fondo de Estímulo al Desempeño, con seguimiento de indicadores y metas. Elaboré insumos técnicos, estadísticos y normativos, y participé en la negociación con gobiernos regionales para implementar intervenciones."]},
+ {r:"Consultor",o:"Autoridad Nacional del Servicio Civil (SERVIR)",s:[2015,7],e:[2015,9],b:["Elaboré una propuesta metodológica para incorporar el enfoque intercultural en el diagnóstico de conocimientos del Sistema Nacional de Desarrollo e Inclusión Social, y apoyé la convocatoria del Programa de Desarrollo Gerencial."]},
+ {r:"Investigador voluntario (UNV)",o:"Naciones Unidas · DESA",s:[2015,4],e:[2015,8],b:["Recolecté y analicé información sobre gobierno electrónico en los portales de distintos niveles de gobierno de Costa Rica, México y Paraguay para el Estudio de Gobierno Electrónico de las Naciones Unidas 2016."]},
+ {r:"Pasante y consultor",o:"UNESCO",s:[2013,11],e:[2015,1],b:["Coordiné la implementación de proyectos del sector Ciencias, como el Programa Hidrológico Internacional y el Programa sobre el Hombre y la Biósfera, y fui punto focal nacional para la COP 20 de la Convención Marco de las Naciones Unidas sobre el Cambio Climático."]}
+];
+JOBS.reverse();
+var A=2013.75,Z=2026.9;
+function t(d){return d[0]+(d[1]-1)/12}
+function pos(v){return ((v-A)/(Z-A)*100).toFixed(2)}
+function dur(j){var e=j.e||NOW,m=(e[0]-j.s[0])*12+(e[1]-j.s[1])+1,y=Math.floor(m/12),r=m%12;
+ return (y?y+(y>1?" años":" año"):"")+(y&&r?" y ":"")+(r?r+(r>1?" meses":" mes"):"")}
+var rail=document.getElementById("rail"),vp=document.getElementById("viewport"),prev=document.getElementById("prev"),next=document.getElementById("next"),ci=document.getElementById("ci");
+document.getElementById("cn").textContent=JOBS.length;
+function ix(i){return (i/(JOBS.length-1)*100).toFixed(2)}
+var rh='<div class="base"></div><div class="fill" id="fill"></div>';
+JOBS.forEach(function(j,i){
+ if(i===0||j.s[0]!==JOBS[i-1].s[0])rh+='<span class="yr" style="left:'+ix(i)+'%"><span class="full">'+j.s[0]+'</span><span class="short">’'+String(j.s[0]).slice(2)+'</span></span>';
+ rh+='<button type="button" data-i="'+i+'" style="left:'+ix(i)+'%" aria-label="'+j.r+', '+j.o+', '+j.s[0]+'"></button>';
+});
+rail.innerHTML=rh;
+vp.innerHTML=JOBS.map(function(j,i){
+ var when=MES[j.s[1]-1]+" "+j.s[0]+" – "+(j.e?MES[j.e[1]-1]+" "+j.e[0]:"hoy");
+ return '<article class="slide" role="group" aria-roledescription="cargo" aria-label="'+(i+1)+' de '+JOBS.length+'"><div><p class="when">'+when+(j.e?'':'<span class="tagnow">Actual</span>')+'</p><p class="dur">'+dur(j)+'</p><h3>'+j.r+'</h3><p class="org">'+j.o+'</p></div><p class="sdesc">'+j.b.join(' ')+'</p></article>';
+}).join('');
+var dots=[].slice.call(rail.querySelectorAll("button")),fill=document.getElementById("fill"),cur=-1;
+function mark(i){
+ if(i===cur)return;cur=i;ci.textContent=i+1;
+ dots.forEach(function(d,k){d.classList.toggle("on",k===i);d.classList.toggle("past",k<i);if(k===i)d.setAttribute("aria-current","step");else d.removeAttribute("aria-current")});
+ fill.style.width=ix(i)+"%";
+ prev.setAttribute("aria-disabled",String(i===0));next.setAttribute("aria-disabled",String(i===JOBS.length-1));
+}
+function go(i){i=Math.max(0,Math.min(JOBS.length-1,i));vp.scrollTo({left:i*vp.clientWidth});mark(i)}
+prev.addEventListener("click",function(){go(cur-1)});
+next.addEventListener("click",function(){go(cur+1)});
+rail.addEventListener("click",function(e){var b=e.target.closest("button[data-i]");if(b)go(+b.dataset.i)});
+vp.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(cur+1)}if(e.key==="ArrowLeft"){e.preventDefault();go(cur-1)}});
+var st;vp.addEventListener("scroll",function(){clearTimeout(st);st=setTimeout(function(){mark(Math.round(vp.scrollLeft/vp.clientWidth))},80)});
+window.addEventListener("resize",function(){vp.scrollLeft=cur*vp.clientWidth});
+mark(0);
+
+/* Autoplay every 5 s: runs only while the carousel is on screen, pauses on hover or focus, has a pause button */
+(function(){
+ var car=document.querySelector(".car"),play=document.getElementById("play"),fill=document.getElementById("autofill"),cnt=document.getElementById("count");
+ var on=!matchMedia("(prefers-reduced-motion: reduce)").matches,seen=false,held=false,timer=null;
+ function bar(run){fill.classList.remove("run");void fill.offsetWidth;if(run)fill.classList.add("run")}
+ function stop(){clearTimeout(timer);timer=null;bar(false)}
+ function sched(){stop();if(on&&seen&&!held&&!document.hidden){bar(true);timer=setTimeout(function(){go(cur+1>=JOBS.length?0:cur+1);sched()},5000)}}
+ function setOn(v){on=v;play.setAttribute("aria-pressed",String(v));play.setAttribute("aria-label",v?"Pausar el avance automático":"Reanudar el avance automático");cnt.setAttribute("aria-live",v?"off":"polite");sched()}
+ play.addEventListener("click",function(){setOn(!on)});
+ [prev,next,rail].forEach(function(el){el.addEventListener("click",function(){sched()})});
+ vp.addEventListener("keydown",function(){sched()});
+ vp.addEventListener("touchstart",function(){stop()},{passive:true});
+ vp.addEventListener("touchend",function(){setTimeout(sched,600)},{passive:true});
+ car.addEventListener("mouseenter",function(){held=true;stop()});
+ car.addEventListener("mouseleave",function(){held=false;sched()});
+ car.addEventListener("focusin",function(){held=true;stop()});
+ car.addEventListener("focusout",function(){held=false;sched()});
+ document.addEventListener("visibilitychange",sched);
+ if("IntersectionObserver" in window){new IntersectionObserver(function(es){seen=es[0].isIntersecting;sched()},{threshold:.4}).observe(car)}else{seen=true}
+ setOn(on);
+})();
+
+var GH="https://github.com/vguardiaf/qlabpucp_python_intermedio/tree/main/";
+var PROJ=[
+ {lead:1,charts:1,label:"Metodología · priorización de países · 2026",imgs:[["matriz-modelo-a.jpg","Modelo A","con filtro de necesidad: 34 países","Matriz de oportunidad y preparación del modelo A: 34 países africanos con desnutrición crónica de 20 % o más, ubicados en cuatro cuadrantes; arriba a la derecha, los candidatos prioritarios"]],f:"54",fl:"países africanos evaluados en seis criterios",q:"¿En qué países una asistencia técnica breve puede cambiar más la vida de los niños?",d:"Diseñé un modelo que prioriza países para recibir asistencia técnica en presupuesto por resultados. Cruza la oportunidad de intervenir con la preparación de cada Estado, a partir de datos abiertos de UNICEF, el Banco Mundial, PEFA y el FMI.",tl:["PEFA","WGI","JME","Open Budget Survey","FMI","Excel"],note:"Documento interno · sin enlace público",l:[]},
+ {lead:1,video:"reel-brasil.mp4",poster:"reel-brasil.jpg",f:"0.77",fl:"correlación entre pobreza y voto por Lula en 5.570 municipios",q:"¿Los municipios más pobres de Brasil votaron más por Lula?",d:"Cruza el voto presidencial de 2026 del Tribunal Superior Electoral con la pobreza del Censo 2022 en un dashboard con mapa, filtros y buscador. Lula sacó 73,6 % en el quintil más pobre y 37,9 % en el menos pobre. Pero la pobreza no lo explica todo: con niveles parecidos, obtuvo 69,5 % en Sergipe y 33,4 % en Acre.",tl:["pandas","geopandas","Leaflet","Plotly","Qwen3-TTS","Whisper"],l:[["Dashboard","https://vguardiaf.github.io/qlabpucp_python_intermedio/tarea_3/web/"],["Código",GH+"tarea_3"]]},
+ {lead:1,label:"Destacado · Perú 2026",f:"+106 %",fl:"focos en octubre 2026, récord desde 2012",imgs:[["fuego-arequipa.jpg","Arequipa","1.562 ha quemadas","Imagen Sentinel-2 de un incendio en Arequipa, octubre de 2026: en naranja y rojo, el área quemada"],["fuego-apurimac.jpg","Apurímac","1.252 ha quemadas","Imagen Sentinel-2 de un incendio en Apurímac, octubre de 2026: en naranja y rojo, el área quemada"]],q:"¿Es 2026 un año récord de incendios en el Perú?",d:"Compara la temporada 2026 con las de 2012 a 2025 usando focos de calor satelitales VIIRS. Descarta fuentes fijas y quemas pequeñas, mide el área quemada con imágenes Sentinel-2 y estima el riesgo de la semana con el pronóstico del clima. Octubre fue récord, aunque la temporada completa va 16 % por debajo.",tl:["VIIRS","Sentinel-2","rasterio","d3"],l:[["Dashboard","https://claude.ai/artifact/X8oDTiZ6w59yggsH36ptFu"],["Código",GH+"tarea_1_clase"]]},
+ {f:"0.82",fl:"F1 macro en test (zero-shot: 0.64)",q:"¿Se pueden convertir titulares peruanos en un clasificador de noticias?",d:"Recolecta 383 titulares de El Comercio, los etiqueta con un modelo de lenguaje local revisado por una persona y entrena BETO, un modelo en español, para clasificarlos por tema. Una app clasifica cualquier titular y muestra su nivel de confianza.",tl:["BETO","Qwen2.5","Streamlit"],l:[["App","https://clasificador-noticias-peru.streamlit.app/"],["Código",GH+"tarea_1"]]},
+ {f:"0.19",fl:"tasa de error por palabra del mejor modelo de voz",q:"¿Qué tan bien leen y escuchan los modelos abiertos documentos y voces peruanas?",d:"Arma dos corpus con licencia libre: 25 documentos peruanos impresos y manuscritos, y audios de entrevistas y noticieros. Compara tres modelos de lectura y tres de voz contra transcripciones manuales, protege los nombres con seudónimos y extrae datos con un modelo de lenguaje, con auditoría humana.",tl:["PaddleOCR","faster-whisper","spaCy"],l:[["App","https://modelos-documentos-audio.streamlit.app/"],["Código",GH+"tarea_2"]]},
+ {f:"27.53 %",fl:"pobreza nacional 2024 (INEI: 27.6 %)",q:"¿Pueden unas skills de Claude Code limpiar y mapear la ENAHO siempre igual?",d:"Tres skills de Claude Code convierten la Encuesta Nacional de Hogares 2024 del INEI en una base de personas, gráficos por área, sexo o edad y un mapa de pobreza por departamento. El resultado es el mismo cada vez y coincide con las cifras oficiales.",tl:["Claude Code","ENAHO","uv"],l:[["Repositorio","https://github.com/vguardiaf/enaho-skill"]]},
+ {wide:1,f:"15",fl:"formatos: PDF, Word, PowerPoint, Excel, HTML y más",q:"¿Cómo convertir cualquier documento en texto listo para analizar o usar con IA?",d:"MarkItDown Drop: arrastras archivos o carpetas completas sobre un ícono en el escritorio y los convierte a Markdown con MarkItDown, de Microsoft. Recorre subcarpetas, guarda cada .md junto a su original y al final reporta cuántos se convirtieron y cuáles fallaron.",tl:["Windows","PowerShell","MarkItDown"],note:"Herramienta local · sin enlace público",l:[]},
+ {f:"45 s",fl:"reel vertical narrado con mi voz clonada",q:"¿Se puede contar un dashboard en un reel con modelos abiertos?",d:"Convierte los hallazgos del dashboard de incendios en un reel para redes. El guion lo propone un modelo de lenguaje y lo corregí contra la fuente; la voz se clona con 13 segundos de grabación, Whisper genera los subtítulos y MusicGen la música. El video declara el uso de IA.",tl:["Qwen3-TTS","Whisper","MusicGen","ffmpeg"],l:[["Reel",GH.replace("tree","blob")+"tarea_2_clase/reel/reel.mp4"],["Código",GH+"tarea_2_clase"]]}
+];
+var QUAD='<svg class="quad" viewBox="0 0 220 220" role="img" aria-label="Esquema de la matriz: oportunidad en el eje vertical, preparación en el horizontal, con umbral de 50 en ambos ejes"><rect x="30" y="10" width="180" height="180" fill="none" stroke="var(--line)"/><rect x="120" y="10" width="90" height="90" fill="var(--tint)"/><line x1="120" y1="10" x2="120" y2="190" stroke="var(--muted)" stroke-dasharray="3 3"/><line x1="30" y1="100" x2="210" y2="100" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="165" y="30" text-anchor="middle" font-size="10" fill="var(--gold-ink)" font-family="IBM Plex Mono,monospace">PRIORIDAD</text><g fill="var(--muted)"><circle cx="60" cy="150" r="4"/><circle cx="85" cy="125" r="4"/><circle cx="140" cy="160" r="4"/><circle cx="70" cy="70" r="4"/><circle cx="175" cy="135" r="4"/><circle cx="100" cy="170" r="4"/></g><g fill="var(--gold)"><circle cx="150" cy="60" r="5"/><circle cx="175" cy="45" r="5"/><circle cx="190" cy="75" r="5"/></g><text x="120" y="208" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="IBM Plex Mono,monospace">PREPARACIÓN →</text><text x="14" y="100" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="IBM Plex Mono,monospace" transform="rotate(-90 14 100)">OPORTUNIDAD →</text></svg>';
+function links(p){if(!p.l.length)return '<div class="links"><span class="mono">'+p.note+'</span></div>';return '<div class="links">'+p.l.map(function(x){return '<a href="'+x[1]+'">'+x[0]+' ↗</a>'}).join('')+'</div>'}
+function tools(p){return '<ul class="tools">'+p.tl.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'}
+function desc(p){return '<p class="desc">'+p.d+'</p>'}
+document.getElementById("projects").innerHTML=PROJ.map(function(p){
+ if(p.full)return '<article class="proj full"><div class="col"><p class="mono">Metodología · priorización de países · 2026</p><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p>'+QUAD+'</div><div class="col"><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</div></article>';
+ var g=p.imgs?'<div class="sat">'+p.imgs.map(function(x){return '<figure><img src="'+x[0]+'" alt="'+x[3]+'" loading="lazy"><figcaption><b>'+x[1]+'</b> · '+x[2]+'</figcaption></figure>'}).join('')+'</div>':'';
+ var v=p.video?'<figure class="reel"><video controls playsinline preload="metadata" poster="'+p.poster+'" width="1080" height="1920" aria-label="Reel de 64 segundos sobre pobreza y voto en Brasil, narrado con voz clonada"><source src="'+p.video+'" type="video/mp4"></video><figcaption>Reel de 64 s · voz clonada con IA</figcaption></figure>':'';
+ if(p.lead)return '<article class="proj lead '+(p.video?'is-video':'is-imgs')+(p.charts?' is-charts':'')+'"><div class="media">'+v+g+'</div><div class="col info"><p class="mono">'+(p.label||'Destacado · Brasil 2026')+'</p><div class="figrow"><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p></div><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</div></article>';
+ if(p.wide)return '<article class="proj wide"><div class="col"><div class="drop" role="img" aria-label="Flujo de MarkItDown Drop: archivos PDF, Word, PowerPoint y Excel entran al ícono y salen como Markdown"><div class="chips2"><span>PDF</span><span>DOCX</span><span>PPTX</span><span>XLSX</span></div><span class="arr" aria-hidden="true">→</span><img src="markitdown-icon.png" alt="" width="84" height="84"><span class="arr" aria-hidden="true">→</span><div class="chips2 out"><span>.md</span></div></div><pre class="term" aria-label="Ejemplo de salida en la consola">Folder: C:\\Informes\n  informe_2025.pdf   <i>OK</i>\n  presupuesto.xlsx   <i>OK</i>\n  taller.pptx        <i>OK</i>\n\nDone: 3 converted, 0 failed.</pre><p class="cap">Salida de ejemplo en la consola</p></div><div class="col"><p class="mono">Herramienta · MarkItDown Drop</p><div class="figrow"><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p></div><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</div></article>';
+ return '<article class="proj"><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</article>';
+}).join('');
+
+var CONT={am:"América",eu:"Europa",af:"África"};
+var TRIPS=[
+ ["604","Perú","am"],["032","Argentina","am"],["152","Chile","am"],["068","Bolivia","am"],["600","Paraguay","am"],["076","Brasil","am"],["218","Ecuador","am"],["862","Venezuela","am"],["591","Panamá","am"],["840","Estados Unidos","am"],["192","Cuba","am"],["214","República Dominicana","am"],["332","Haití","am"],
+ ["620","Portugal","eu"],["724","España","eu"],["250","Francia","eu"],["020","Andorra","eu",[1.52,42.55]],["826","Reino Unido","eu",null,"Inglaterra y Escocia"],["276","Alemania","eu"],["442","Luxemburgo","eu",[6.13,49.75]],["056","Bélgica","eu"],["528","Países Bajos","eu"],["380","Italia","eu"],["336","Ciudad del Vaticano","eu",[12.45,41.9]],["705","Eslovenia","eu"],["703","Eslovaquia","eu"],["348","Hungría","eu"],["203","Chequia","eu"],["756","Suiza","eu"],["792","Turquía","eu"],["233","Estonia","eu"],["752","Suecia","eu"],["208","Dinamarca","eu"],
+ ["710","Sudáfrica","af"]
+];
+var VIS={};TRIPS.forEach(function(t){VIS[t[0]]={c:t[1],k:t[2],pt:t[3],n:t[4]}});
+var tipc=document.getElementById("tipc"),tipm=document.getElementById("tipm"),tr=document.getElementById("trips");
+document.getElementById("tripline").textContent=TRIPS.length+" países en tres continentes";
+tr.innerHTML=Object.keys(CONT).map(function(k){
+ var L=TRIPS.filter(function(t){return t[2]===k});
+ return '<div class="cont"><p class="mono">'+CONT[k]+' · '+L.length+'</p><div class="chips">'+L.map(function(t){return '<button type="button" class="chip" aria-pressed="false" data-id="'+t[0]+'">'+t[1]+'</button>'}).join('')+'</div></div>';
+}).join('');
+function pick(id){
+ var v=VIS[id];if(!v)return;tipc.textContent=v.c;tipm.textContent=v.n||CONT[v.k];
+ tr.querySelectorAll(".chip").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.id===id))});
+ if(window.d3)d3.selectAll("#map .v").classed("sel",function(d){return (d.id||d[0])===id});
+}
+tr.addEventListener("click",function(e){var b=e.target.closest(".chip");if(b)pick(b.dataset.id)});
+var WORLD=fetch("world.json").then(function(r){return r.json()});
+WORLD.then(function(w){
+ var f=topojson.feature(w,w.objects.countries);
+ f.features=f.features.filter(function(d){return d.id!=="010"});
+ var proj=d3.geoEqualEarth().fitExtent([[4,4],[956,496]],f),path=d3.geoPath(proj),svg=d3.select("#map");
+ var have={};f.features.forEach(function(d){have[d.id]=1});
+ svg.selectAll("path").data(f.features).join("path").attr("d",path)
+  .attr("class",function(d){return VIS[d.id]?"v":null})
+  .attr("fill",function(d){return VIS[d.id]?"var(--sage)":"var(--land)"})
+  .attr("stroke","var(--card)").attr("stroke-width",.6)
+  .on("click",function(e,d){pick(d.id)});
+ var small=TRIPS.filter(function(t){return t[3]&&!have[t[0]]});
+ svg.selectAll("circle").data(small).join("circle").attr("class","v dot")
+  .attr("cx",function(t){return proj(t[3])[0]}).attr("cy",function(t){return proj(t[3])[1]}).attr("r",4)
+  .attr("fill","var(--sage)").attr("stroke","var(--card)").attr("stroke-width",1.2)
+  .on("click",function(e,t){pick(t[0])});
+}).catch(function(){tipc.textContent="No se pudo cargar el mapa";tipm.textContent="La lista de países sigue disponible"});
+
+/* Hero dot-matrix map: South America in sage, Peru in sand, Lima marked */
+var hm=document.getElementById("heromap"),SA_IDS=["032","068","076","152","170","218","328","600","604","740","858","862","254"],SAF=null,PER=null;
+function drawHero(){
+ if(!SAF)return;
+ var r=hm.getBoundingClientRect(),W=r.width,H=r.height;if(!W||!H)return;
+ var dpr=Math.min(window.devicePixelRatio||1,2);hm.width=W*dpr;hm.height=H*dpr;
+ var g=hm.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,W,H);
+ var narrow=W<760,col={type:"FeatureCollection",features:SAF};
+ var nameEnd=0;try{var h1=document.getElementById("h-hero"),rg=document.createRange();rg.selectNodeContents(h1.firstChild);nameEnd=rg.getBoundingClientRect().right-r.left}catch(e){}
+ var x0=narrow?W*0.3:Math.max(W*0.58,nameEnd+48),dim=false;if(!narrow&&W-x0<300){x0=W*0.58;dim=true}
+ var proj=d3.geoMercator().fitExtent([[x0,24],[W-12,H-24]],col);
+ var step=narrow?8:7,rs=narrow?1.15:1.4;
+ g.globalAlpha=narrow?0.3:(dim?0.4:1);
+ var bb=d3.geoPath(proj).bounds(col);
+ for(var px=Math.max(0,bb[0][0]);px<=bb[1][0];px+=step){for(var py=Math.max(0,bb[0][1]);py<=bb[1][1];py+=step){
+  var ll=proj.invert([px,py]);if(!ll)continue;
+  var inP=d3.geoContains(PER,ll);
+  if(!inP&&!SAF.some(function(f){return d3.geoContains(f,ll)}))continue;
+  g.beginPath();g.arc(px,py,inP?rs+0.55:rs,0,6.2832);g.fillStyle=inP?"#C1A27B":"rgba(113,138,128,.78)";g.fill();
+ }}
+ g.globalAlpha=1;
+ if(narrow||dim)return;
+ var L=proj([-77.04,-12.05]);
+ g.beginPath();g.arc(L[0],L[1],12,0,6.2832);g.fillStyle="rgba(193,162,123,.2)";g.fill();
+ g.beginPath();g.arc(L[0],L[1],4.5,0,6.2832);g.fillStyle="#F2EFE8";g.fill();
+ if(!narrow){g.strokeStyle="rgba(193,162,123,.6)";g.lineWidth=1;g.beginPath();g.moveTo(L[0]-9,L[1]);g.lineTo(L[0]-64,L[1]);g.stroke();
+  g.fillStyle="#C1A27B";g.font="11px 'IBM Plex Mono',monospace";g.textAlign="right";g.fillText("LIMA",L[0]-70,L[1]+4);}
+}
+WORLD.then(function(w){
+ var all=topojson.feature(w,w.objects.countries).features;
+ SAF=all.filter(function(d){return SA_IDS.indexOf(d.id)>-1});PER=all.filter(function(d){return d.id==="604"})[0];
+ drawHero();
+}).catch(function(){});
+var hrt;window.addEventListener("resize",function(){clearTimeout(hrt);hrt=setTimeout(drawHero,150)});
+if(document.fonts)document.fonts.ready.then(drawHero);
+
+/* Scroll reveal: elements below the fold rise into place; nothing is hidden */
+(function(){
+ var els=[].slice.call(document.querySelectorAll(".sec-head,.profile .big,.prose,.car,.rail,.edu li,.logos,.proj,.likes li,.mapcard,.trips,.contact h2,.mailrow"));
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ var vh=window.innerHeight;
+ els.forEach(function(el,i){if(el.getBoundingClientRect().top>vh*0.9){el.classList.add("rv");el.style.transitionDelay=((i%3)*70)+"ms"}});
+ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}})},{rootMargin:"0px 0px -8% 0px"});
+ els.forEach(function(el){if(el.classList.contains("rv"))io.observe(el)});
+})();
+
+var cp=document.getElementById("copy"),mail=document.getElementById("mail");
+cp.addEventListener("click",function(){
+ function sel(){var r=document.createRange();r.selectNodeContents(mail);var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent="Seleccionado: copia con Ctrl+C"}
+ try{navigator.clipboard.writeText(mail.textContent).then(function(){cp.textContent="Copiado"},sel)}catch(e){sel()}
+});
+
+var tabs=[].slice.call(document.querySelectorAll(".tabs a")),ids=tabs.map(function(a){return a.getAttribute("href").slice(1)});
+if("IntersectionObserver" in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var k=ids.indexOf(en.target.id);if(k>-1)tabs.forEach(function(a,i){a.classList.toggle("on",i===k)})}})},{rootMargin:"-45% 0px -50% 0px"});
+ ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+}
+})();
+</script>
+
+</body>
+</html>
