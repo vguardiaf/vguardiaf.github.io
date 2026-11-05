@@ -364,6 +364,55 @@ a{color:inherit}
 /* Scroll reveal: content is always visible; it only rises a little into place */
 .rv{transform:translateY(22px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{transform:none}
+/* Header language switch */
+.hdr-r{display:flex;align-items:center;gap:10px}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+.lang button{appearance:none;border:0;background:transparent;font:600 .75rem/1 var(--f-mono);letter-spacing:.06em;color:var(--muted);padding:8px 11px;border-radius:999px;cursor:pointer;min-height:32px}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--on-accent)}
+/* Hero: CV download and profile links */
+.hero .actions{align-items:center}
+.btn .dl{width:16px;height:16px}
+.ibtn{width:48px;height:48px;border-radius:50%;display:inline-grid;place-items:center;border:1.5px solid rgba(242,239,232,.45);color:#F2EFE8;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.ibtn svg{width:19px;height:19px;fill:currentColor}
+.ibtn:hover{background:#F2EFE8;color:#1E3330;border-color:#F2EFE8;transform:translateY(-2px)}
+.cv-alt{margin-top:12px;font-size:var(--s-small)}
+.cv-alt a{color:#C9D3CE;text-underline-offset:3px}
+.cv-alt a:hover{color:var(--gold)}
+/* Projects carousel: one project per slide, media panel on the left, information on the right */
+.autobar{background:var(--line)}
+.dark .autobar{background:rgba(242,239,232,.14)}
+.pslide{flex:0 0 100%;scroll-snap-align:start;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(14px,2vw,20px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,3.5vw,48px);align-items:stretch}
+.pslide .pmedia{background:#1E3330;border-radius:12px;padding:clamp(16px,2.5vw,26px);display:grid;place-items:center;min-width:0;position:relative;overflow:hidden;min-height:300px}
+.pslide .pmedia::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(242,239,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,232,.05) 1px,transparent 1px);background-size:28px 28px}
+.pslide .pmedia>*{position:relative;z-index:1}
+.pslide .pmedia figcaption,.pslide .pmedia .cap{color:rgba(242,239,232,.72)}
+.pslide .reel{margin:0;justify-items:center}
+.pslide .reel video{max-width:230px}
+.pslide .sat{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pslide .sat img{aspect-ratio:3/4}
+.pslide .sat b{color:#F2EFE8}
+.pslide .sat.one{grid-template-columns:minmax(0,1fr)}
+.pslide .sat.one img{aspect-ratio:auto;object-fit:contain;background:#FCFCFB}
+.pslide .bigfig{display:grid;gap:10px;text-align:left;width:100%}
+.pslide .bigfig .fig{color:var(--gold)!important;font-size:clamp(4rem,9vw,7.5rem)!important}
+.pslide .bigfig .figl{color:#C9D3CE;font-size:1rem;max-width:26ch}
+.pslide .pinfo{display:flex;flex-direction:column;gap:14px;min-width:0;padding:clamp(4px,1vw,10px) clamp(0px,1vw,10px) 6px 0;align-self:center}
+.pslide .pinfo .fig{font-family:var(--f-display);font-weight:700;font-size:clamp(2.6rem,4.6vw,3.6rem);letter-spacing:-.04em;line-height:.95;color:var(--gold-ink)}
+.pslide .pinfo .figl{font-size:var(--s-small);color:var(--muted);margin-top:-6px}
+.pslide h3{font-size:clamp(1.25rem,2.1vw,1.6rem);line-height:1.25;font-weight:600;letter-spacing:-.01em}
+.pslide .desc{color:var(--muted);font-size:.98rem;line-height:1.65}
+.pslide .tools{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.pslide .tools li{font-family:var(--f-mono);font-size:.6875rem;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--ink)}
+.pslide .links{display:flex;flex-wrap:wrap;gap:6px 18px;padding-top:12px;border-top:1px dashed var(--line)}
+.pslide .links a{font-size:var(--s-small);font-weight:600;text-decoration:none;color:var(--accent);min-height:36px;display:inline-flex;align-items:center}
+.pslide .links a:hover{text-decoration:underline;text-underline-offset:3px}
+.pslide .drop{background:transparent;padding:0}
+.pslide .term{width:100%}
+.pdots{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+.pdots button{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font:500 .75rem/1 var(--f-body);padding:8px 12px;border-radius:999px;cursor:pointer;min-height:34px;transition:background .2s,color .2s,border-color .2s}
+.pdots button[aria-current="true"]{background:var(--ink);color:var(--on-accent);border-color:var(--ink)}
+.pdots button:hover{border-color:var(--gold)}
+@media (max-width:760px){.pslide{grid-template-columns:minmax(0,1fr)}.pslide .pmedia{min-height:0}.pslide .reel video{max-width:200px}.pdots{display:none}.lang button{padding:7px 9px}}
 @media (prefers-reduced-motion:reduce){.rv{transform:none}}
 </style>
 </head>
@@ -374,7 +423,13 @@ a{color:inherit}
     <nav class="topnav" aria-label="Secciones">
       <a href="#perfil">Perfil</a><a href="#trayectoria">Trayectoria</a><a href="#formacion">Formación</a><a href="#proyectos">Proyectos</a><a href="#sobre-mi">Sobre mí</a>
     </nav>
-    <a class="cta" href="#contacto">Contacto</a>
+    <div class="hdr-r">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true" lang="es" title="Español">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
+      </div>
+      <a class="cta" href="#contacto">Contacto</a>
+    </div>
   </div>
 </header>
 
@@ -386,9 +441,12 @@ a{color:inherit}
     <h1 id="h-hero">Víctor Guardia <span>Política pública basada en evidencia</span></h1>
     <p class="lede">Politólogo. Diseño e implemento políticas públicas a partir de la evidencia, para lograr cambios tangibles en la vida de las poblaciones más vulnerables.</p>
     <div class="actions">
-      <a class="btn solid" href="#proyectos">Ver proyectos <span class="ar" aria-hidden="true">→</span></a>
-      <a class="btn" href="#trayectoria">Trayectoria</a>
+      <a class="btn solid" id="btn-proj" href="#proyectos">Ver proyectos <span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn" id="btn-cv" href="CV_Victor_Guardia_ES.pdf" download="CV_Victor_Guardia_ES.pdf"><svg class="dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span id="cv-label">Descargar CV</span></a>
+      <a class="ibtn" href="https://github.com/vguardiaf" aria-label="GitHub · vguardiaf" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <a class="ibtn" href="https://www.linkedin.com/in/victor-guardia-981a29b8/" aria-label="LinkedIn · Víctor Guardia" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     </div>
+    <p class="cv-alt"><a id="cv-alt" href="CV_Victor_Guardia_EN.pdf" download="CV_Victor_Guardia_EN.pdf">CV in English (PDF)</a></p>
     <div class="facts" role="list">
       <div role="listitem"><b>10+</b><span>años en gestión pública</span></div>
       <div role="listitem"><b>9</b><span>instituciones públicas y de cooperación</span></div>
@@ -458,7 +516,14 @@ a{color:inherit}
       <div><p class="mono">Proyectos de datos</p><h2 id="h-proy">Preguntas que respondí con evidencia</h2></div>
       <p>Cada proyecto parte de una pregunta concreta y termina en algo que se puede usar: una metodología, una app, un dashboard o un reel.</p>
     </div>
-    <div class="grid-p" id="projects"></div>
+    <div class="car pcar" id="pcar" role="region" aria-roledescription="carrusel" aria-label="Proyectos">
+      <button class="arrow prev" id="pprev" type="button" aria-label="Proyecto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="viewport" id="pvp" tabindex="0"></div>
+      <button class="arrow next" id="pnext" type="button" aria-label="Proyecto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="pdots" id="pdots"></div>
+    <p class="count" id="pcount" aria-live="off"><b id="pci">1</b><span>/</span><span id="pcn">8</span><button type="button" class="playbtn" id="pplay" aria-pressed="true" aria-label="Pausar el avance automático"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button></p>
+    <div class="autobar" aria-hidden="true"><span id="pautofill"></span></div>
   </div>
 </section>
 
@@ -514,119 +579,272 @@ a{color:inherit}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script>
 (function(){
-var MES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+/* ---------- Language ---------- */
+var LANG=(function(){
+ try{var q=new URLSearchParams(location.search).get("lang");if(q==="en"||q==="es")return q}catch(e){}
+ try{var s=localStorage.getItem("vg-lang");if(s==="en"||s==="es")return s}catch(e){}
+ return (navigator.language||"es").toLowerCase().indexOf("en")===0?"en":"es";
+})();
+function L(o){return o&&typeof o==="object"&&("es" in o)?o[LANG]:o}
+
+var UI={
+ es:{months:["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],now:"hoy",current:"Actual",y1:" año",yn:" años",m1:" mes",mn:" meses",and:" y ",of:" de ",
+  pause:"Pausar el avance automático",resume:"Reanudar el avance automático",cvLabel:"Descargar CV",cvAlt:"CV in English (PDF)",cvFile:"CV_Victor_Guardia_ES.pdf",cvOther:"CV_Victor_Guardia_EN.pdf",
+  copy:"Copiar correo",copied:"Copiado",selected:"Seleccionado: copia con Ctrl+C",trip:" países en tres continentes",tapCountry:"Toca un país",knownGreen:"En verde, los que conozco",mapErr:"No se pudo cargar el mapa",mapErr2:"La lista de países sigue disponible",
+  jobRole:"cargo",projRole:"proyecto",tabs:["Inicio","Trayectoria","Proyectos","Sobre mí","Contacto"]},
+ en:{months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],now:"present",current:"Current",y1:" year",yn:" years",m1:" month",mn:" months",and:" and ",of:" of ",
+  pause:"Pause autoplay",resume:"Resume autoplay",cvLabel:"Download CV",cvAlt:"CV en español (PDF)",cvFile:"CV_Victor_Guardia_EN.pdf",cvOther:"CV_Victor_Guardia_ES.pdf",
+  copy:"Copy email",copied:"Copied",selected:"Selected: copy with Ctrl+C",trip:" countries on three continents",tapCountry:"Tap a country",knownGreen:"In green, the ones I know",mapErr:"The map could not load",mapErr2:"The country list is still available",
+  jobRole:"role",projRole:"project",tabs:["Home","Career","Projects","About me","Contact"]}
+};
+function U(k){return UI[LANG][k]}
+
+/* Static text: [selector, {es,en}, attribute (omit for innerHTML)] */
+var STATIC=[
+ ['.topnav a[href="#perfil"]',{es:"Perfil",en:"Profile"}],
+ ['.topnav a[href="#trayectoria"]',{es:"Trayectoria",en:"Career"}],
+ ['.topnav a[href="#formacion"]',{es:"Formación",en:"Education"}],
+ ['.topnav a[href="#proyectos"]',{es:"Proyectos",en:"Projects"}],
+ ['.topnav a[href="#sobre-mi"]',{es:"Sobre mí",en:"About me"}],
+ ['.top .cta',{es:"Contacto",en:"Contact"}],
+ ['.hero .mono',{es:"<span>12.05° S · 77.04° O</span><span>Lima, Perú</span>",en:"<span>12.05° S · 77.04° W</span><span>Lima, Peru</span>"}],
+ ['#h-hero span',{es:"Política pública basada en evidencia",en:"Evidence-based public policy"}],
+ ['.hero .lede',{es:"Politólogo. Diseño e implemento políticas públicas a partir de la evidencia, para lograr cambios tangibles en la vida de las poblaciones más vulnerables.",en:"Political scientist. I design and implement public policy grounded in evidence, to bring tangible change to the lives of the most vulnerable people."}],
+ ['#btn-proj',{es:'Ver proyectos <span class="ar" aria-hidden="true">→</span>',en:'See projects <span class="ar" aria-hidden="true">→</span>'}],
+ ['.facts div:nth-child(1) span',{es:"años en gestión pública",en:"years in public management"}],
+ ['.facts div:nth-child(2) span',{es:"instituciones públicas y de cooperación",en:"public and international institutions"}],
+ ['.facts div:nth-child(3) span',{es:"proyectos de datos y evidencia",en:"data and evidence projects"}],
+ ['.pcol .mono',{es:"Perfil",en:"Profile"}],
+ ['#h-perfil',{es:"Perfil",en:"Profile"}],
+ ['.portrait img',{es:"Víctor Guardia sonriendo, con lentes y saco oscuro",en:"Víctor Guardia smiling, wearing glasses and a dark jacket"},"alt"],
+ ['.profile .big',{es:"Llevo más de diez años trabajando donde la política pública se encuentra con la realidad: en ministerios, en <em>gobiernos regionales y locales</em> y en el territorio.",en:"For more than ten years I have worked where public policy meets reality: in ministries, in <em>regional and local governments</em> and in the field."}],
+ ['.prose',{es:"<p>He diseñado y acompañado intervenciones de salud, desarrollo infantil, protección social y prevención de la violencia, siempre con la misma pregunta: ¿está llegando el servicio a quien más lo necesita y está cambiando algo en su vida? Para responderla uso datos. Defino indicadores, reviso su calidad, encuentro brechas y las convierto en propuestas de mejora que los equipos pueden aplicar.</p><p>Mi experiencia combina el Estado peruano (MIDIS, MINSA, INABIF, SERVIR) con la cooperación internacional (UNESCO, GIZ, Naciones Unidas) y el sector privado. Hoy fortalezco capacidades en gestión y presupuesto por resultados, y amplío mis herramientas con ciencia de datos para que las decisiones públicas se apoyen en mejor evidencia.</p>",
+  en:"<p>I have designed and supported interventions in health, early childhood development, social protection and violence prevention, always asking the same question: is the service reaching the people who need it most, and is it changing anything in their lives? I answer it with data. I define indicators, check their quality, find gaps and turn them into improvements that teams can put into practice.</p><p>My experience combines the Peruvian State (MIDIS, MINSA, INABIF, SERVIR) with international cooperation (UNESCO, GIZ, United Nations) and the private sector. Today I build capacity in results-based management and budgeting, and I keep growing my data science toolkit so that public decisions rest on better evidence.</p>"}],
+ ['.skills',{es:"<li>Asistencia técnica subnacional</li><li>Seguimiento de metas e indicadores</li><li>Protección social y salud pública</li><li>Políticas basadas en evidencia</li><li>Articulación intergubernamental</li><li>Gestión de proyectos</li>",en:"<li>Technical assistance to subnational governments</li><li>Target and indicator monitoring</li><li>Social protection and public health</li><li>Evidence-based policy</li><li>Intergovernmental coordination</li><li>Project management</li>"}],
+ ['#trayectoria .sec-head',{es:'<div><p class="mono">Trayectoria · 2013–2026</p><h2 id="h-tray">Trece años dentro y junto al Estado</h2></div><p>Ministerios, cooperación internacional y trabajo de campo con comunidades. Recorre cada etapa, de UNESCO en 2013 a hoy, y mira qué hice en cada una.</p>',
+  en:'<div><p class="mono">Career · 2013–2026</p><h2 id="h-tray">Thirteen years inside and alongside the State</h2></div><p>Ministries, international cooperation and fieldwork with communities. Walk through each stage, from UNESCO in 2013 to today, and see what I did in each one.</p>'}],
+ ['#rail',{es:"Línea de tiempo de cargos",en:"Timeline of roles"},"aria-label"],
+ ['#trayectoria .car',{es:"Cargos, del más antiguo al actual",en:"Roles, from the earliest to the current one"},"aria-label"],
+ ['#prev',{es:"Cargo anterior",en:"Previous role"},"aria-label"],
+ ['#next',{es:"Cargo siguiente",en:"Next role"},"aria-label"],
+ ['#formacion .sec-head',{es:'<div><p class="mono">Formación · 2012–2027</p><h2 id="h-edu">Estudios y especialización</h2></div><p>De la ciencia política a la ciencia de datos: una formación que sigue creciendo.</p>',
+  en:'<div><p class="mono">Education · 2012–2027</p><h2 id="h-edu">Studies and specialization</h2></div><p>From political science to data science: an education that keeps growing.</p>'}],
+ ['.edu',{es:'<li><span class="mono">2012 · Barcelona</span><b>Licenciatura en Ciencias Políticas y de la Administración</b><span>Universidad Autónoma de Barcelona</span></li><li><span class="mono">2014 · Lima</span><b>IV Diplomado en Relaciones Internacionales</b><span>Academia Diplomática del Perú</span></li><li><span class="mono">2016 · Lima</span><b>Programa de Gobernabilidad, Gerencia Política y Gestión Pública</b><span>Pontificia Universidad Católica del Perú</span></li><li class="now"><span class="mono">En curso · termina en 2027</span><b>Diplomatura de Especialización en Ciencia de Datos para las Ciencias Sociales y Gestión Pública</b><span>Pontificia Universidad Católica del Perú</span></li>',
+  en:'<li><span class="mono">2012 · Barcelona</span><b>Bachelor’s degree in Political Science and Public Administration</b><span>Autonomous University of Barcelona</span></li><li><span class="mono">2014 · Lima</span><b>Diploma in International Relations</b><span>Diplomatic Academy of Peru</span></li><li><span class="mono">2016 · Lima</span><b>Program in Governance, Political Management and Public Management</b><span>Pontifical Catholic University of Peru</span></li><li class="now"><span class="mono">In progress · ends 2027</span><b>Specialization Diploma in Data Science for the Social Sciences and Public Management</b><span>Pontifical Catholic University of Peru</span></li>'}],
+ ['.logos',{es:"Herramientas",en:"Tools"},"aria-label"],
+ ['#proyectos .sec-head',{es:'<div><p class="mono">Proyectos de datos</p><h2 id="h-proy">Preguntas que respondí con evidencia</h2></div><p>Cada proyecto parte de una pregunta concreta y termina en algo que se puede usar: una metodología, una app, un dashboard o un reel.</p>',
+  en:'<div><p class="mono">Data projects</p><h2 id="h-proy">Questions I answered with evidence</h2></div><p>Each project starts from a concrete question and ends in something people can use: a methodology, an app, a dashboard or a reel.</p>'}],
+ ['#pcar',{es:"Proyectos",en:"Projects"},"aria-label"],
+ ['#pprev',{es:"Proyecto anterior",en:"Previous project"},"aria-label"],
+ ['#pnext',{es:"Proyecto siguiente",en:"Next project"},"aria-label"],
+ ['#sobre-mi .sec-head',{es:'<div><p class="mono">Sobre mí</p><h2 id="h-sobre">Fuera del trabajo</h2></div><p>Me gusta viajar, la fotografía, las artes marciales, los rompecabezas y los juegos de mesa y de rol.</p>',
+  en:'<div><p class="mono">About me</p><h2 id="h-sobre">Outside work</h2></div><p>I enjoy travelling, photography, martial arts, puzzles, and board and role-playing games.</p>'}],
+ ['.likes li:nth-child(1) b',{es:"Viajar",en:"Travel"}],
+ ['.likes li:nth-child(2) b',{es:"Fotografía",en:"Photography"}],
+ ['.likes li:nth-child(2) span',{es:"Lugares y personas de cada viaje",en:"Places and people from every trip"}],
+ ['.likes li:nth-child(3) b',{es:"Artes marciales",en:"Martial arts"}],
+ ['.likes li:nth-child(3) span',{es:"Disciplina y constancia",en:"Discipline and consistency"}],
+ ['.likes li:nth-child(4) b',{es:"Rompecabezas",en:"Puzzles"}],
+ ['.likes li:nth-child(4) span',{es:"Pieza por pieza, como los datos",en:"Piece by piece, like data"}],
+ ['.likes li:nth-child(5) b',{es:"Juegos de mesa y de rol",en:"Board and role-playing games"}],
+ ['.likes li:nth-child(5) span',{es:"Estrategia e historias en grupo",en:"Strategy and shared stories"}],
+ ['#map',{es:"Mapa del mundo con los países que he visitado resaltados",en:"World map with the countries I have visited highlighted"},"aria-label"],
+ ['#contacto > .wrap > .mono',{es:"Contacto",en:"Contact"}],
+ ['#h-con',{es:"Conversemos <span>sobre gestión pública y datos</span>",en:"Let’s talk <span>about public management and data</span>"}],
+ ['.foot span:last-child',{es:"Lima, Perú",en:"Lima, Peru"}],
+ ['.topnav',{es:"Secciones",en:"Sections"},"aria-label"],
+ ['.tabs',{es:"Secciones",en:"Sections"},"aria-label"]
+];
+
+/* ---------- Data ---------- */
 var NOW=[2026,11];
 var JOBS=[
- {r:"Consultor",o:"ATIPAY Innovación para la Gestión",s:[2026,6],e:null,b:["Coordino los aspectos administrativos, logísticos y financieros de un proyecto de fortalecimiento de capacidades de servidores públicos y actores privados en gestión y presupuestación basada en resultados, ejecutado con la Children's Investment Fund Foundation (CIFF)."]},
- {r:"Consultor",o:"Ministerio de Salud",s:[2024,4],e:[2026,3],b:["Brindé asistencia técnica a equipos sectoriales para mejorar procesos e implementar sistemas de información en salud. Monitoreé indicadores y la calidad de los datos de intervenciones dirigidas a poblaciones vulnerables, y coordiné con unidades técnicas y actores institucionales la aplicación de lineamientos y mejoras operativas."]},
- {r:"Coordinador de Seguridad, Salud y Medioambiente",o:"Nestlé Perú",s:[2023,2],e:[2024,3],b:["Supervisé la implementación de intervenciones de seguridad y salud ocupacional, asegurando el cumplimiento de estándares y la mejora continua. Hice seguimiento de indicadores, identifiqué riesgos y ejecuté acciones correctivas junto a los equipos operativos."]},
- {r:"Especialista en Políticas Públicas",o:"Ministerio de Desarrollo e Inclusión Social",s:[2019,8],e:[2023,2],b:["Brindé asistencia técnica a gobiernos regionales y locales en la implementación de intervenciones sociales para poblaciones vulnerables, y apoyé el diseño de políticas para la pandemia y la primera infancia. Hice seguimiento a la ejecución, identifiqué brechas y propuse mejoras, en coordinación con las entidades implementadoras, y elaboré reportes técnicos para la toma de decisiones."]},
- {r:"Consultor",o:"GIZ Perú",s:[2019,2],e:[2019,5],b:["Analicé los procesos operativos de servicios de salud para identificar ineficiencias y oportunidades de mejora, y generé evidencia técnica para optimizar la prestación de servicios en coordinación con actores regionales."]},
- {r:"Consultor",o:"INABIF",s:[2018,10],e:[2018,12],b:["Apoyé el diseño e implementación de compromisos de gestión con gobiernos regionales para prevenir la violencia contra las mujeres y los integrantes del grupo familiar, y coordiné con actores subnacionales para fortalecer la ejecución de intervenciones financiadas con recursos públicos."]},
- {r:"Consultor en salud intercultural",o:"Ministerio de Salud",s:[2017,4],e:[2018,12],b:["Coordiné la implementación de la política sectorial de salud intercultural, con prioridad en pueblos indígenas en situación de aislamiento y contacto inicial y en comunidades nativas. Articulé intervenciones de salud con actores regionales, locales y de la sociedad civil en contextos de alta vulnerabilidad y brindé soporte técnico en territorio."]},
- {r:"Asesor junior",o:"Ministerio de Desarrollo e Inclusión Social",s:[2015,10],e:[2016,12],b:["Brindé soporte técnico al Viceministerio de Políticas y Evaluación Social y al Fondo de Estímulo al Desempeño, con seguimiento de indicadores y metas. Elaboré insumos técnicos, estadísticos y normativos, y participé en la negociación con gobiernos regionales para implementar intervenciones."]},
- {r:"Consultor",o:"Autoridad Nacional del Servicio Civil (SERVIR)",s:[2015,7],e:[2015,9],b:["Elaboré una propuesta metodológica para incorporar el enfoque intercultural en el diagnóstico de conocimientos del Sistema Nacional de Desarrollo e Inclusión Social, y apoyé la convocatoria del Programa de Desarrollo Gerencial."]},
- {r:"Investigador voluntario (UNV)",o:"Naciones Unidas · DESA",s:[2015,4],e:[2015,8],b:["Recolecté y analicé información sobre gobierno electrónico en los portales de distintos niveles de gobierno de Costa Rica, México y Paraguay para el Estudio de Gobierno Electrónico de las Naciones Unidas 2016."]},
- {r:"Pasante y consultor",o:"UNESCO",s:[2013,11],e:[2015,1],b:["Coordiné la implementación de proyectos del sector Ciencias, como el Programa Hidrológico Internacional y el Programa sobre el Hombre y la Biósfera, y fui punto focal nacional para la COP 20 de la Convención Marco de las Naciones Unidas sobre el Cambio Climático."]}
+ {r:{es:"Consultor",en:"Consultant"},o:"ATIPAY Innovación para la Gestión",s:[2026,6],e:null,
+  b:{es:"Coordino los aspectos administrativos, logísticos y financieros de un proyecto de fortalecimiento de capacidades de servidores públicos y actores privados en gestión y presupuestación basada en resultados, ejecutado con la Children's Investment Fund Foundation (CIFF).",
+     en:"I coordinate the administrative, logistical and financial side of a project that builds the capacity of public servants and private actors in results-based management and budgeting, carried out with the Children's Investment Fund Foundation (CIFF)."}},
+ {r:{es:"Consultor",en:"Consultant"},o:{es:"Ministerio de Salud",en:"Ministry of Health of Peru"},s:[2024,4],e:[2026,3],
+  b:{es:"Brindé asistencia técnica a equipos sectoriales para mejorar procesos e implementar sistemas de información en salud. Monitoreé indicadores y la calidad de los datos de intervenciones dirigidas a poblaciones vulnerables, y coordiné con unidades técnicas y actores institucionales la aplicación de lineamientos y mejoras operativas.",
+     en:"I provided technical assistance to sector teams to improve processes and roll out health information systems. I monitored indicators and data quality for interventions aimed at vulnerable populations, and coordinated with technical units and institutional actors to apply guidelines and operational improvements."}},
+ {r:{es:"Coordinador de Seguridad, Salud y Medioambiente",en:"Health, Safety and Environment Coordinator"},o:"Nestlé Perú",s:[2023,2],e:[2024,3],
+  b:{es:"Supervisé la implementación de intervenciones de seguridad y salud ocupacional, asegurando el cumplimiento de estándares y la mejora continua. Hice seguimiento de indicadores, identifiqué riesgos y ejecuté acciones correctivas junto a los equipos operativos.",
+     en:"I oversaw the implementation of occupational health and safety interventions, ensuring compliance with standards and continuous improvement. I tracked indicators, identified risks and carried out corrective actions with the operations teams."}},
+ {r:{es:"Especialista en Políticas Públicas",en:"Public Policy Specialist"},o:{es:"Ministerio de Desarrollo e Inclusión Social",en:"Ministry of Development and Social Inclusion of Peru"},s:[2019,8],e:[2023,2],
+  b:{es:"Brindé asistencia técnica a gobiernos regionales y locales en la implementación de intervenciones sociales para poblaciones vulnerables, y apoyé el diseño de políticas para la pandemia y la primera infancia. Hice seguimiento a la ejecución, identifiqué brechas y propuse mejoras, en coordinación con las entidades implementadoras, y elaboré reportes técnicos para la toma de decisiones.",
+     en:"I provided technical assistance to regional and local governments implementing social interventions for vulnerable populations, and supported the design of policies for the pandemic and early childhood. I tracked implementation, identified gaps and proposed improvements with the implementing agencies, and wrote technical reports for decision-making."}},
+ {r:{es:"Consultor",en:"Consultant"},o:{es:"GIZ Perú",en:"GIZ Peru"},s:[2019,2],e:[2019,5],
+  b:{es:"Analicé los procesos operativos de servicios de salud para identificar ineficiencias y oportunidades de mejora, y generé evidencia técnica para optimizar la prestación de servicios en coordinación con actores regionales.",
+     en:"I analysed the operating processes of health services to identify inefficiencies and room for improvement, and produced technical evidence to optimise service delivery together with regional actors."}},
+ {r:{es:"Consultor",en:"Consultant"},o:{es:"INABIF",en:"INABIF (National Family Welfare Program)"},s:[2018,10],e:[2018,12],
+  b:{es:"Apoyé el diseño e implementación de compromisos de gestión con gobiernos regionales para prevenir la violencia contra las mujeres y los integrantes del grupo familiar, y coordiné con actores subnacionales para fortalecer la ejecución de intervenciones financiadas con recursos públicos.",
+     en:"I supported the design and implementation of management agreements with regional governments to prevent violence against women and family members, and worked with subnational actors to strengthen publicly funded interventions."}},
+ {r:{es:"Consultor en salud intercultural",en:"Intercultural Health Consultant"},o:{es:"Ministerio de Salud",en:"Ministry of Health of Peru"},s:[2017,4],e:[2018,12],
+  b:{es:"Coordiné la implementación de la política sectorial de salud intercultural, con prioridad en pueblos indígenas en situación de aislamiento y contacto inicial y en comunidades nativas. Articulé intervenciones de salud con actores regionales, locales y de la sociedad civil en contextos de alta vulnerabilidad y brindé soporte técnico en territorio.",
+     en:"I coordinated the rollout of the national intercultural health policy, prioritising Indigenous peoples in isolation and initial contact and native communities. I aligned health interventions with regional, local and civil society actors in highly vulnerable settings and gave technical support in the field."}},
+ {r:{es:"Asesor junior",en:"Junior Advisor"},o:{es:"Ministerio de Desarrollo e Inclusión Social",en:"Ministry of Development and Social Inclusion of Peru"},s:[2015,10],e:[2016,12],
+  b:{es:"Brindé soporte técnico al Viceministerio de Políticas y Evaluación Social y al Fondo de Estímulo al Desempeño, con seguimiento de indicadores y metas. Elaboré insumos técnicos, estadísticos y normativos, y participé en la negociación con gobiernos regionales para implementar intervenciones.",
+     en:"I gave technical support to the Vice Ministry of Social Policy and Evaluation and to the Performance Incentive Fund, tracking indicators and targets. I prepared technical, statistical and regulatory inputs and took part in negotiations with regional governments to implement interventions."}},
+ {r:{es:"Consultor",en:"Consultant"},o:{es:"Autoridad Nacional del Servicio Civil (SERVIR)",en:"National Civil Service Authority of Peru (SERVIR)"},s:[2015,7],e:[2015,9],
+  b:{es:"Elaboré una propuesta metodológica para incorporar el enfoque intercultural en el diagnóstico de conocimientos del Sistema Nacional de Desarrollo e Inclusión Social, y apoyé la convocatoria del Programa de Desarrollo Gerencial.",
+     en:"I drafted a methodology to bring an intercultural approach into the knowledge assessment of the National Development and Social Inclusion System, and supported the call for the Management Development Program."}},
+ {r:{es:"Investigador voluntario (UNV)",en:"Volunteer Researcher (UNV)"},o:{es:"Naciones Unidas · DESA",en:"United Nations · DESA"},s:[2015,4],e:[2015,8],
+  b:{es:"Recolecté y analicé información sobre gobierno electrónico en los portales de distintos niveles de gobierno de Costa Rica, México y Paraguay para el Estudio de Gobierno Electrónico de las Naciones Unidas 2016.",
+     en:"I collected and analysed e-government information from the portals of different levels of government in Costa Rica, Mexico and Paraguay for the United Nations E-Government Survey 2016."}},
+ {r:{es:"Pasante y consultor",en:"Intern and Consultant"},o:"UNESCO",s:[2013,11],e:[2015,1],
+  b:{es:"Coordiné la implementación de proyectos del sector Ciencias, como el Programa Hidrológico Internacional y el Programa sobre el Hombre y la Biósfera, y fui punto focal nacional para la COP 20 de la Convención Marco de las Naciones Unidas sobre el Cambio Climático.",
+     en:"I coordinated Natural Sciences projects such as the International Hydrological Programme and the Man and the Biosphere Programme, and served as national focal point for COP 20 of the United Nations Framework Convention on Climate Change."}}
 ];
 JOBS.reverse();
-var A=2013.75,Z=2026.9;
-function t(d){return d[0]+(d[1]-1)/12}
-function pos(v){return ((v-A)/(Z-A)*100).toFixed(2)}
-function dur(j){var e=j.e||NOW,m=(e[0]-j.s[0])*12+(e[1]-j.s[1])+1,y=Math.floor(m/12),r=m%12;
- return (y?y+(y>1?" años":" año"):"")+(y&&r?" y ":"")+(r?r+(r>1?" meses":" mes"):"")}
-var rail=document.getElementById("rail"),vp=document.getElementById("viewport"),prev=document.getElementById("prev"),next=document.getElementById("next"),ci=document.getElementById("ci");
-document.getElementById("cn").textContent=JOBS.length;
-function ix(i){return (i/(JOBS.length-1)*100).toFixed(2)}
-var rh='<div class="base"></div><div class="fill" id="fill"></div>';
-JOBS.forEach(function(j,i){
- if(i===0||j.s[0]!==JOBS[i-1].s[0])rh+='<span class="yr" style="left:'+ix(i)+'%"><span class="full">'+j.s[0]+'</span><span class="short">’'+String(j.s[0]).slice(2)+'</span></span>';
- rh+='<button type="button" data-i="'+i+'" style="left:'+ix(i)+'%" aria-label="'+j.r+', '+j.o+', '+j.s[0]+'"></button>';
-});
-rail.innerHTML=rh;
-vp.innerHTML=JOBS.map(function(j,i){
- var when=MES[j.s[1]-1]+" "+j.s[0]+" – "+(j.e?MES[j.e[1]-1]+" "+j.e[0]:"hoy");
- return '<article class="slide" role="group" aria-roledescription="cargo" aria-label="'+(i+1)+' de '+JOBS.length+'"><div><p class="when">'+when+(j.e?'':'<span class="tagnow">Actual</span>')+'</p><p class="dur">'+dur(j)+'</p><h3>'+j.r+'</h3><p class="org">'+j.o+'</p></div><p class="sdesc">'+j.b.join(' ')+'</p></article>';
-}).join('');
-var dots=[].slice.call(rail.querySelectorAll("button")),fill=document.getElementById("fill"),cur=-1;
-function mark(i){
- if(i===cur)return;cur=i;ci.textContent=i+1;
- dots.forEach(function(d,k){d.classList.toggle("on",k===i);d.classList.toggle("past",k<i);if(k===i)d.setAttribute("aria-current","step");else d.removeAttribute("aria-current")});
- fill.style.width=ix(i)+"%";
- prev.setAttribute("aria-disabled",String(i===0));next.setAttribute("aria-disabled",String(i===JOBS.length-1));
-}
-function go(i){i=Math.max(0,Math.min(JOBS.length-1,i));vp.scrollTo({left:i*vp.clientWidth});mark(i)}
-prev.addEventListener("click",function(){go(cur-1)});
-next.addEventListener("click",function(){go(cur+1)});
-rail.addEventListener("click",function(e){var b=e.target.closest("button[data-i]");if(b)go(+b.dataset.i)});
-vp.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(cur+1)}if(e.key==="ArrowLeft"){e.preventDefault();go(cur-1)}});
-var st;vp.addEventListener("scroll",function(){clearTimeout(st);st=setTimeout(function(){mark(Math.round(vp.scrollLeft/vp.clientWidth))},80)});
-window.addEventListener("resize",function(){vp.scrollLeft=cur*vp.clientWidth});
-mark(0);
-
-/* Autoplay every 5 s: runs only while the carousel is on screen, pauses on hover or focus, has a pause button */
-(function(){
- var car=document.querySelector(".car"),play=document.getElementById("play"),fill=document.getElementById("autofill"),cnt=document.getElementById("count");
- var on=!matchMedia("(prefers-reduced-motion: reduce)").matches,seen=false,held=false,timer=null;
- function bar(run){fill.classList.remove("run");void fill.offsetWidth;if(run)fill.classList.add("run")}
- function stop(){clearTimeout(timer);timer=null;bar(false)}
- function sched(){stop();if(on&&seen&&!held&&!document.hidden){bar(true);timer=setTimeout(function(){go(cur+1>=JOBS.length?0:cur+1);sched()},5000)}}
- function setOn(v){on=v;play.setAttribute("aria-pressed",String(v));play.setAttribute("aria-label",v?"Pausar el avance automático":"Reanudar el avance automático");cnt.setAttribute("aria-live",v?"off":"polite");sched()}
- play.addEventListener("click",function(){setOn(!on)});
- [prev,next,rail].forEach(function(el){el.addEventListener("click",function(){sched()})});
- vp.addEventListener("keydown",function(){sched()});
- vp.addEventListener("touchstart",function(){stop()},{passive:true});
- vp.addEventListener("touchend",function(){setTimeout(sched,600)},{passive:true});
- car.addEventListener("mouseenter",function(){held=true;stop()});
- car.addEventListener("mouseleave",function(){held=false;sched()});
- car.addEventListener("focusin",function(){held=true;stop()});
- car.addEventListener("focusout",function(){held=false;sched()});
- document.addEventListener("visibilitychange",sched);
- if("IntersectionObserver" in window){new IntersectionObserver(function(es){seen=es[0].isIntersecting;sched()},{threshold:.4}).observe(car)}else{seen=true}
- setOn(on);
-})();
 
 var GH="https://github.com/vguardiaf/qlabpucp_python_intermedio/tree/main/";
 var PROJ=[
- {lead:1,charts:1,label:"Metodología · priorización de países · 2026",imgs:[["matriz-modelo-a.jpg","Modelo A","con filtro de necesidad: 34 países","Matriz de oportunidad y preparación del modelo A: 34 países africanos con desnutrición crónica de 20 % o más, ubicados en cuatro cuadrantes; arriba a la derecha, los candidatos prioritarios"]],f:"54",fl:"países africanos evaluados en seis criterios",q:"¿En qué países una asistencia técnica breve puede cambiar más la vida de los niños?",d:"Diseñé un modelo que prioriza países para recibir asistencia técnica en presupuesto por resultados. Cruza la oportunidad de intervenir con la preparación de cada Estado, a partir de datos abiertos de UNICEF, el Banco Mundial, PEFA y el FMI.",tl:["PEFA","WGI","JME","Open Budget Survey","FMI","Excel"],note:"Documento interno · sin enlace público",l:[]},
- {lead:1,video:"reel-brasil.mp4",poster:"reel-brasil.jpg",f:"0.77",fl:"correlación entre pobreza y voto por Lula en 5.570 municipios",q:"¿Los municipios más pobres de Brasil votaron más por Lula?",d:"Cruza el voto presidencial de 2026 del Tribunal Superior Electoral con la pobreza del Censo 2022 en un dashboard con mapa, filtros y buscador. Lula sacó 73,6 % en el quintil más pobre y 37,9 % en el menos pobre. Pero la pobreza no lo explica todo: con niveles parecidos, obtuvo 69,5 % en Sergipe y 33,4 % en Acre.",tl:["pandas","geopandas","Leaflet","Plotly","Qwen3-TTS","Whisper"],l:[["Dashboard","https://vguardiaf.github.io/qlabpucp_python_intermedio/tarea_3/web/"],["Código",GH+"tarea_3"]]},
- {lead:1,label:"Destacado · Perú 2026",f:"+106 %",fl:"focos en octubre 2026, récord desde 2012",imgs:[["fuego-arequipa.jpg","Arequipa","1.562 ha quemadas","Imagen Sentinel-2 de un incendio en Arequipa, octubre de 2026: en naranja y rojo, el área quemada"],["fuego-apurimac.jpg","Apurímac","1.252 ha quemadas","Imagen Sentinel-2 de un incendio en Apurímac, octubre de 2026: en naranja y rojo, el área quemada"]],q:"¿Es 2026 un año récord de incendios en el Perú?",d:"Compara la temporada 2026 con las de 2012 a 2025 usando focos de calor satelitales VIIRS. Descarta fuentes fijas y quemas pequeñas, mide el área quemada con imágenes Sentinel-2 y estima el riesgo de la semana con el pronóstico del clima. Octubre fue récord, aunque la temporada completa va 16 % por debajo.",tl:["VIIRS","Sentinel-2","rasterio","d3"],l:[["Dashboard","https://claude.ai/artifact/X8oDTiZ6w59yggsH36ptFu"],["Código",GH+"tarea_1_clase"]]},
- {f:"0.82",fl:"F1 macro en test (zero-shot: 0.64)",q:"¿Se pueden convertir titulares peruanos en un clasificador de noticias?",d:"Recolecta 383 titulares de El Comercio, los etiqueta con un modelo de lenguaje local revisado por una persona y entrena BETO, un modelo en español, para clasificarlos por tema. Una app clasifica cualquier titular y muestra su nivel de confianza.",tl:["BETO","Qwen2.5","Streamlit"],l:[["App","https://clasificador-noticias-peru.streamlit.app/"],["Código",GH+"tarea_1"]]},
- {f:"0.19",fl:"tasa de error por palabra del mejor modelo de voz",q:"¿Qué tan bien leen y escuchan los modelos abiertos documentos y voces peruanas?",d:"Arma dos corpus con licencia libre: 25 documentos peruanos impresos y manuscritos, y audios de entrevistas y noticieros. Compara tres modelos de lectura y tres de voz contra transcripciones manuales, protege los nombres con seudónimos y extrae datos con un modelo de lenguaje, con auditoría humana.",tl:["PaddleOCR","faster-whisper","spaCy"],l:[["App","https://modelos-documentos-audio.streamlit.app/"],["Código",GH+"tarea_2"]]},
- {f:"27.53 %",fl:"pobreza nacional 2024 (INEI: 27.6 %)",q:"¿Pueden unas skills de Claude Code limpiar y mapear la ENAHO siempre igual?",d:"Tres skills de Claude Code convierten la Encuesta Nacional de Hogares 2024 del INEI en una base de personas, gráficos por área, sexo o edad y un mapa de pobreza por departamento. El resultado es el mismo cada vez y coincide con las cifras oficiales.",tl:["Claude Code","ENAHO","uv"],l:[["Repositorio","https://github.com/vguardiaf/enaho-skill"]]},
- {wide:1,f:"15",fl:"formatos: PDF, Word, PowerPoint, Excel, HTML y más",q:"¿Cómo convertir cualquier documento en texto listo para analizar o usar con IA?",d:"MarkItDown Drop: arrastras archivos o carpetas completas sobre un ícono en el escritorio y los convierte a Markdown con MarkItDown, de Microsoft. Recorre subcarpetas, guarda cada .md junto a su original y al final reporta cuántos se convirtieron y cuáles fallaron.",tl:["Windows","PowerShell","MarkItDown"],note:"Herramienta local · sin enlace público",l:[]},
- {f:"45 s",fl:"reel vertical narrado con mi voz clonada",q:"¿Se puede contar un dashboard en un reel con modelos abiertos?",d:"Convierte los hallazgos del dashboard de incendios en un reel para redes. El guion lo propone un modelo de lenguaje y lo corregí contra la fuente; la voz se clona con 13 segundos de grabación, Whisper genera los subtítulos y MusicGen la música. El video declara el uso de IA.",tl:["Qwen3-TTS","Whisper","MusicGen","ffmpeg"],l:[["Reel",GH.replace("tree","blob")+"tarea_2_clase/reel/reel.mp4"],["Código",GH+"tarea_2_clase"]]}
+ {short:{es:"Priorización de países",en:"Country prioritisation"},label:{es:"Metodología · priorización de países · 2026",en:"Methodology · country prioritisation · 2026"},
+  imgs:[["matriz-modelo-a.jpg",{es:"Modelo A",en:"Model A"},{es:"con filtro de necesidad: 34 países",en:"with a need screen: 34 countries"},{es:"Matriz de oportunidad y preparación del modelo A: 34 países africanos con desnutrición crónica de 20 % o más, ubicados en cuatro cuadrantes",en:"Model A opportunity–readiness matrix: 34 African countries with stunting of 20% or more, placed in four quadrants"}]],one:1,
+  f:"54",fl:{es:"países africanos evaluados en seis criterios",en:"African countries scored on six criteria"},
+  q:{es:"¿En qué países una asistencia técnica breve puede cambiar más la vida de los niños?",en:"Where can brief technical assistance change children’s lives the most?"},
+  d:{es:"Diseñé un modelo que prioriza países para recibir asistencia técnica en presupuesto por resultados. Cruza la oportunidad de intervenir con la preparación de cada Estado, a partir de datos abiertos de UNICEF, el Banco Mundial, PEFA y el FMI.",en:"I designed a model that prioritises countries for technical assistance in results-based budgeting. It crosses the opportunity to intervene with each State’s readiness, using open data from UNICEF, the World Bank, PEFA and the IMF."},
+  tl:["PEFA","WGI","JME","Open Budget Survey",{es:"FMI",en:"IMF"},"Excel"],note:{es:"Documento interno · sin enlace público",en:"Internal document · no public link"},l:[]},
+ {short:{es:"Pobreza y voto en Brasil",en:"Poverty and voting in Brazil"},label:{es:"Destacado · Brasil 2026",en:"Featured · Brazil 2026"},video:"reel-brasil.mp4",poster:"reel-brasil.jpg",
+  f:"0.77",fl:{es:"correlación entre pobreza y voto por Lula en 5.570 municipios",en:"correlation between poverty and the Lula vote across 5,570 municipalities"},
+  q:{es:"¿Los municipios más pobres de Brasil votaron más por Lula?",en:"Did Brazil’s poorest municipalities vote more for Lula?"},
+  d:{es:"Cruza el voto presidencial de 2026 del Tribunal Superior Electoral con la pobreza del Censo 2022 en un dashboard con mapa, filtros y buscador. Lula sacó 73,6 % en el quintil más pobre y 37,9 % en el menos pobre. Pero la pobreza no lo explica todo: con niveles parecidos, obtuvo 69,5 % en Sergipe y 33,4 % en Acre.",en:"It crosses the 2026 presidential vote from the Superior Electoral Court with poverty from the 2022 Census in a dashboard with a map, filters and search. Lula won 73.6% in the poorest quintile and 37.9% in the least poor. But poverty does not explain everything: with similar levels, he got 69.5% in Sergipe and 33.4% in Acre."},
+  tl:["pandas","geopandas","Leaflet","Plotly","Qwen3-TTS","Whisper"],l:[["Dashboard","https://vguardiaf.github.io/qlabpucp_python_intermedio/tarea_3/web/"],[{es:"Código",en:"Code"},GH+"tarea_3"]]},
+ {short:{es:"Incendios en el Perú",en:"Wildfires in Peru"},label:{es:"Destacado · Perú 2026",en:"Featured · Peru 2026"},
+  imgs:[["fuego-arequipa.jpg","Arequipa",{es:"1.562 ha quemadas",en:"1,562 ha burned"},{es:"Imagen Sentinel-2 de un incendio en Arequipa, octubre de 2026: en naranja y rojo, el área quemada",en:"Sentinel-2 image of a wildfire in Arequipa, October 2026: the burned area in orange and red"}],["fuego-apurimac.jpg","Apurímac",{es:"1.252 ha quemadas",en:"1,252 ha burned"},{es:"Imagen Sentinel-2 de un incendio en Apurímac, octubre de 2026: en naranja y rojo, el área quemada",en:"Sentinel-2 image of a wildfire in Apurímac, October 2026: the burned area in orange and red"}]],
+  f:"+106 %",fl:{es:"focos en octubre 2026, récord desde 2012",en:"fire detections in October 2026, a record since 2012"},
+  q:{es:"¿Es 2026 un año récord de incendios en el Perú?",en:"Is 2026 a record year for wildfires in Peru?"},
+  d:{es:"Compara la temporada 2026 con las de 2012 a 2025 usando focos de calor satelitales VIIRS. Descarta fuentes fijas y quemas pequeñas, mide el área quemada con imágenes Sentinel-2 y estima el riesgo de la semana con el pronóstico del clima. Octubre fue récord, aunque la temporada completa va 16 % por debajo.",en:"It compares the 2026 season with 2012–2025 using VIIRS satellite fire detections. It removes fixed sources and small burns, measures burned area with Sentinel-2 imagery and estimates the week’s risk from the weather forecast. October set a record, although the full season is 16% below average."},
+  tl:["VIIRS","Sentinel-2","rasterio","d3"],l:[["Dashboard","https://claude.ai/artifact/X8oDTiZ6w59yggsH36ptFu"],[{es:"Código",en:"Code"},GH+"tarea_1_clase"]]},
+ {short:{es:"Clasificador de noticias",en:"News classifier"},label:{es:"Aprendizaje automático · 2026",en:"Machine learning · 2026"},
+  f:"0.82",fl:{es:"F1 macro en test (zero-shot: 0.64)",en:"macro F1 on test (zero-shot: 0.64)"},
+  q:{es:"¿Se pueden convertir titulares peruanos en un clasificador de noticias?",en:"Can Peruvian headlines be turned into a news classifier?"},
+  d:{es:"Recolecta 383 titulares de El Comercio, los etiqueta con un modelo de lenguaje local revisado por una persona y entrena BETO, un modelo en español, para clasificarlos por tema. Una app clasifica cualquier titular y muestra su nivel de confianza.",en:"It collects 383 headlines from El Comercio, labels them with a local language model reviewed by a person and fine-tunes BETO, a Spanish model, to classify them by topic. An app classifies any headline and shows its confidence."},
+  tl:["BETO","Qwen2.5","Streamlit"],l:[["App","https://clasificador-noticias-peru.streamlit.app/"],[{es:"Código",en:"Code"},GH+"tarea_1"]]},
+ {short:{es:"Documentos y voces",en:"Documents and voices"},label:{es:"OCR y reconocimiento de voz · 2026",en:"OCR and speech recognition · 2026"},
+  f:"0.19",fl:{es:"tasa de error por palabra del mejor modelo de voz",en:"word error rate of the best speech model"},
+  q:{es:"¿Qué tan bien leen y escuchan los modelos abiertos documentos y voces peruanas?",en:"How well do open models read and hear Peruvian documents and voices?"},
+  d:{es:"Arma dos corpus con licencia libre: 25 documentos peruanos impresos y manuscritos, y audios de entrevistas y noticieros. Compara tres modelos de lectura y tres de voz contra transcripciones manuales, protege los nombres con seudónimos y extrae datos con un modelo de lenguaje, con auditoría humana.",en:"It builds two openly licensed corpora: 25 printed and handwritten Peruvian documents, and audio from interviews and newscasts. It compares three reading and three speech models against manual transcripts, protects names with pseudonyms and extracts data with a language model, with human review."},
+  tl:["PaddleOCR","faster-whisper","spaCy"],l:[["App","https://modelos-documentos-audio.streamlit.app/"],[{es:"Código",en:"Code"},GH+"tarea_2"]]},
+ {short:{es:"Skills para la ENAHO",en:"ENAHO skills"},label:{es:"Automatización con IA · 2026",en:"AI automation · 2026"},
+  f:"27.53 %",fl:{es:"pobreza nacional 2024 (INEI: 27.6 %)",en:"national poverty 2024 (INEI: 27.6%)"},
+  q:{es:"¿Pueden unas skills de Claude Code limpiar y mapear la ENAHO siempre igual?",en:"Can Claude Code skills clean and map Peru’s household survey the same way every time?"},
+  d:{es:"Tres skills de Claude Code convierten la Encuesta Nacional de Hogares 2024 del INEI en una base de personas, gráficos por área, sexo o edad y un mapa de pobreza por departamento. El resultado es el mismo cada vez y coincide con las cifras oficiales.",en:"Three Claude Code skills turn INEI’s 2024 National Household Survey into a person-level dataset, charts by area, sex or age, and a poverty map by department. The result is the same every time and matches the official figures."},
+  tl:["Claude Code","ENAHO","uv"],l:[[{es:"Repositorio",en:"Repository"},"https://github.com/vguardiaf/enaho-skill"]]},
+ {short:"MarkItDown Drop",label:{es:"Herramienta · MarkItDown Drop",en:"Tool · MarkItDown Drop"},drop:1,
+  f:"15",fl:{es:"formatos: PDF, Word, PowerPoint, Excel, HTML y más",en:"formats: PDF, Word, PowerPoint, Excel, HTML and more"},
+  q:{es:"¿Cómo convertir cualquier documento en texto listo para analizar o usar con IA?",en:"How do you turn any document into text ready for analysis or AI?"},
+  d:{es:"MarkItDown Drop: arrastras archivos o carpetas completas sobre un ícono en el escritorio y los convierte a Markdown con MarkItDown, de Microsoft. Recorre subcarpetas, guarda cada .md junto a su original y al final reporta cuántos se convirtieron y cuáles fallaron.",en:"MarkItDown Drop: you drag files or whole folders onto a desktop icon and it converts them to Markdown with Microsoft’s MarkItDown. It walks through subfolders, saves each .md next to its original and reports how many converted and which failed."},
+  tl:["Windows","PowerShell","MarkItDown"],note:{es:"Herramienta local · sin enlace público",en:"Local tool · no public link"},l:[]},
+ {short:{es:"Reel con voz clonada",en:"Reel with a cloned voice"},label:{es:"Comunicación de datos · 2026",en:"Data storytelling · 2026"},
+  f:"45 s",fl:{es:"reel vertical narrado con mi voz clonada",en:"vertical reel narrated with my cloned voice"},
+  q:{es:"¿Se puede contar un dashboard en un reel con modelos abiertos?",en:"Can a dashboard be told as a reel with open models?"},
+  d:{es:"Convierte los hallazgos del dashboard de incendios en un reel para redes. El guion lo propone un modelo de lenguaje y lo corregí contra la fuente; la voz se clona con 13 segundos de grabación, Whisper genera los subtítulos y MusicGen la música. El video declara el uso de IA.",en:"It turns the wildfire dashboard’s findings into a reel for social media. A language model drafts the script and I checked it against the source; the voice is cloned from a 13-second recording, Whisper writes the subtitles and MusicGen the music. The video discloses its use of AI."},
+  tl:["Qwen3-TTS","Whisper","MusicGen","ffmpeg"],l:[["Reel",GH.replace("tree","blob")+"tarea_2_clase/reel/reel.mp4"],[{es:"Código",en:"Code"},GH+"tarea_2_clase"]]}
 ];
-var QUAD='<svg class="quad" viewBox="0 0 220 220" role="img" aria-label="Esquema de la matriz: oportunidad en el eje vertical, preparación en el horizontal, con umbral de 50 en ambos ejes"><rect x="30" y="10" width="180" height="180" fill="none" stroke="var(--line)"/><rect x="120" y="10" width="90" height="90" fill="var(--tint)"/><line x1="120" y1="10" x2="120" y2="190" stroke="var(--muted)" stroke-dasharray="3 3"/><line x1="30" y1="100" x2="210" y2="100" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="165" y="30" text-anchor="middle" font-size="10" fill="var(--gold-ink)" font-family="IBM Plex Mono,monospace">PRIORIDAD</text><g fill="var(--muted)"><circle cx="60" cy="150" r="4"/><circle cx="85" cy="125" r="4"/><circle cx="140" cy="160" r="4"/><circle cx="70" cy="70" r="4"/><circle cx="175" cy="135" r="4"/><circle cx="100" cy="170" r="4"/></g><g fill="var(--gold)"><circle cx="150" cy="60" r="5"/><circle cx="175" cy="45" r="5"/><circle cx="190" cy="75" r="5"/></g><text x="120" y="208" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="IBM Plex Mono,monospace">PREPARACIÓN →</text><text x="14" y="100" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="IBM Plex Mono,monospace" transform="rotate(-90 14 100)">OPORTUNIDAD →</text></svg>';
-function links(p){if(!p.l.length)return '<div class="links"><span class="mono">'+p.note+'</span></div>';return '<div class="links">'+p.l.map(function(x){return '<a href="'+x[1]+'">'+x[0]+' ↗</a>'}).join('')+'</div>'}
-function tools(p){return '<ul class="tools">'+p.tl.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'}
-function desc(p){return '<p class="desc">'+p.d+'</p>'}
-document.getElementById("projects").innerHTML=PROJ.map(function(p){
- if(p.full)return '<article class="proj full"><div class="col"><p class="mono">Metodología · priorización de países · 2026</p><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p>'+QUAD+'</div><div class="col"><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</div></article>';
- var g=p.imgs?'<div class="sat">'+p.imgs.map(function(x){return '<figure><img src="'+x[0]+'" alt="'+x[3]+'" loading="lazy"><figcaption><b>'+x[1]+'</b> · '+x[2]+'</figcaption></figure>'}).join('')+'</div>':'';
- var v=p.video?'<figure class="reel"><video controls playsinline preload="metadata" poster="'+p.poster+'" width="1080" height="1920" aria-label="Reel de 64 segundos sobre pobreza y voto en Brasil, narrado con voz clonada"><source src="'+p.video+'" type="video/mp4"></video><figcaption>Reel de 64 s · voz clonada con IA</figcaption></figure>':'';
- if(p.lead)return '<article class="proj lead '+(p.video?'is-video':'is-imgs')+(p.charts?' is-charts':'')+'"><div class="media">'+v+g+'</div><div class="col info"><p class="mono">'+(p.label||'Destacado · Brasil 2026')+'</p><div class="figrow"><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p></div><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</div></article>';
- if(p.wide)return '<article class="proj wide"><div class="col"><div class="drop" role="img" aria-label="Flujo de MarkItDown Drop: archivos PDF, Word, PowerPoint y Excel entran al ícono y salen como Markdown"><div class="chips2"><span>PDF</span><span>DOCX</span><span>PPTX</span><span>XLSX</span></div><span class="arr" aria-hidden="true">→</span><img src="markitdown-icon.png" alt="" width="84" height="84"><span class="arr" aria-hidden="true">→</span><div class="chips2 out"><span>.md</span></div></div><pre class="term" aria-label="Ejemplo de salida en la consola">Folder: C:\\Informes\n  informe_2025.pdf   <i>OK</i>\n  presupuesto.xlsx   <i>OK</i>\n  taller.pptx        <i>OK</i>\n\nDone: 3 converted, 0 failed.</pre><p class="cap">Salida de ejemplo en la consola</p></div><div class="col"><p class="mono">Herramienta · MarkItDown Drop</p><div class="figrow"><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p></div><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</div></article>';
- return '<article class="proj"><div class="fig">'+p.f+'</div><p class="figl">'+p.fl+'</p><h3>'+p.q+'</h3>'+desc(p)+tools(p)+links(p)+'</article>';
-}).join('');
 
-var CONT={am:"América",eu:"Europa",af:"África"};
+var CONT={am:{es:"América",en:"Americas"},eu:{es:"Europa",en:"Europe"},af:{es:"África",en:"Africa"}};
 var TRIPS=[
- ["604","Perú","am"],["032","Argentina","am"],["152","Chile","am"],["068","Bolivia","am"],["600","Paraguay","am"],["076","Brasil","am"],["218","Ecuador","am"],["862","Venezuela","am"],["591","Panamá","am"],["840","Estados Unidos","am"],["192","Cuba","am"],["214","República Dominicana","am"],["332","Haití","am"],
- ["620","Portugal","eu"],["724","España","eu"],["250","Francia","eu"],["020","Andorra","eu",[1.52,42.55]],["826","Reino Unido","eu",null,"Inglaterra y Escocia"],["276","Alemania","eu"],["442","Luxemburgo","eu",[6.13,49.75]],["056","Bélgica","eu"],["528","Países Bajos","eu"],["380","Italia","eu"],["336","Ciudad del Vaticano","eu",[12.45,41.9]],["705","Eslovenia","eu"],["703","Eslovaquia","eu"],["348","Hungría","eu"],["203","Chequia","eu"],["756","Suiza","eu"],["792","Turquía","eu"],["233","Estonia","eu"],["752","Suecia","eu"],["208","Dinamarca","eu"],
- ["710","Sudáfrica","af"]
+ ["604",{es:"Perú",en:"Peru"},"am"],["032","Argentina","am"],["152","Chile","am"],["068","Bolivia","am"],["600","Paraguay","am"],["076",{es:"Brasil",en:"Brazil"},"am"],["218","Ecuador","am"],["862","Venezuela","am"],["591",{es:"Panamá",en:"Panama"},"am"],["840",{es:"Estados Unidos",en:"United States"},"am"],["192","Cuba","am"],["214",{es:"República Dominicana",en:"Dominican Republic"},"am"],["332",{es:"Haití",en:"Haiti"},"am"],
+ ["620","Portugal","eu"],["724",{es:"España",en:"Spain"},"eu"],["250",{es:"Francia",en:"France"},"eu"],["020","Andorra","eu",[1.52,42.55]],["826",{es:"Reino Unido",en:"United Kingdom"},"eu",null,{es:"Inglaterra y Escocia",en:"England and Scotland"}],["276",{es:"Alemania",en:"Germany"},"eu"],["442",{es:"Luxemburgo",en:"Luxembourg"},"eu",[6.13,49.75]],["056",{es:"Bélgica",en:"Belgium"},"eu"],["528",{es:"Países Bajos",en:"Netherlands"},"eu"],["380",{es:"Italia",en:"Italy"},"eu"],["336",{es:"Ciudad del Vaticano",en:"Vatican City"},"eu",[12.45,41.9]],["705",{es:"Eslovenia",en:"Slovenia"},"eu"],["703",{es:"Eslovaquia",en:"Slovakia"},"eu"],["348",{es:"Hungría",en:"Hungary"},"eu"],["203",{es:"Chequia",en:"Czechia"},"eu"],["756",{es:"Suiza",en:"Switzerland"},"eu"],["792",{es:"Turquía",en:"Türkiye"},"eu"],["233","Estonia","eu"],["752",{es:"Suecia",en:"Sweden"},"eu"],["208",{es:"Dinamarca",en:"Denmark"},"eu"],
+ ["710",{es:"Sudáfrica",en:"South Africa"},"af"]
 ];
 var VIS={};TRIPS.forEach(function(t){VIS[t[0]]={c:t[1],k:t[2],pt:t[3],n:t[4]}});
-var tipc=document.getElementById("tipc"),tipm=document.getElementById("tipm"),tr=document.getElementById("trips");
-document.getElementById("tripline").textContent=TRIPS.length+" países en tres continentes";
-tr.innerHTML=Object.keys(CONT).map(function(k){
- var L=TRIPS.filter(function(t){return t[2]===k});
- return '<div class="cont"><p class="mono">'+CONT[k]+' · '+L.length+'</p><div class="chips">'+L.map(function(t){return '<button type="button" class="chip" aria-pressed="false" data-id="'+t[0]+'">'+t[1]+'</button>'}).join('')+'</div></div>';
-}).join('');
+
+/* ---------- Generic carousel: arrows, keys, swipe, autoplay with pause ---------- */
+function makeCarousel(o){
+ var c={cur:-1,n:0};
+ function size(){return o.vp.clientWidth}
+ var on=!matchMedia("(prefers-reduced-motion: reduce)").matches,seen=false,held=false,media=false,timer=null;
+ function bar(run){o.fill.style.transitionDuration=(o.ms/1000)+"s";o.fill.classList.remove("run");void o.fill.offsetWidth;if(run)o.fill.classList.add("run")}
+ function stop(){clearTimeout(timer);timer=null;bar(false)}
+ function sched(){stop();if(on&&seen&&!held&&!media&&!document.hidden){bar(true);timer=setTimeout(function(){c.go(c.cur+1>=c.n?0:c.cur+1);sched()},o.ms)}}
+ c.sched=sched;
+ c.mark=function(i){if(i===c.cur)return;c.cur=i;o.ci.textContent=i+1;
+  o.prev.setAttribute("aria-disabled",String(i===0));o.next.setAttribute("aria-disabled",String(i===c.n-1));if(o.onMark)o.onMark(i)};
+ c.go=function(i){i=Math.max(0,Math.min(c.n-1,i));o.vp.scrollTo({left:i*size()});c.mark(i)};
+ c.relabel=function(){o.play.setAttribute("aria-label",on?U("pause"):U("resume"))};
+ c.setOn=function(v){on=v;o.play.setAttribute("aria-pressed",String(v));c.relabel();o.count.setAttribute("aria-live",v?"off":"polite");sched()};
+ c.setMedia=function(v){media=v;sched()};
+ o.prev.addEventListener("click",function(){c.go(c.cur-1);sched()});
+ o.next.addEventListener("click",function(){c.go(c.cur+1);sched()});
+ o.vp.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();c.go(c.cur+1);sched()}if(e.key==="ArrowLeft"){e.preventDefault();c.go(c.cur-1);sched()}});
+ var st;o.vp.addEventListener("scroll",function(){clearTimeout(st);st=setTimeout(function(){c.mark(Math.round(o.vp.scrollLeft/size()))},80)});
+ window.addEventListener("resize",function(){o.vp.scrollLeft=c.cur*size()});
+ o.play.addEventListener("click",function(){c.setOn(!on)});
+ o.vp.addEventListener("touchstart",function(){stop()},{passive:true});
+ o.vp.addEventListener("touchend",function(){setTimeout(sched,600)},{passive:true});
+ o.root.addEventListener("mouseenter",function(){held=true;stop()});
+ o.root.addEventListener("mouseleave",function(){held=false;sched()});
+ o.root.addEventListener("focusin",function(){held=true;stop()});
+ o.root.addEventListener("focusout",function(){held=false;sched()});
+ document.addEventListener("visibilitychange",sched);
+ if("IntersectionObserver" in window){new IntersectionObserver(function(es){seen=es[0].isIntersecting;sched()},{threshold:.35}).observe(o.root)}else{seen=true}
+ return c;
+}
+
+/* ---------- Career (3 s) ---------- */
+var rail=document.getElementById("rail"),vp=document.getElementById("viewport");
+document.getElementById("cn").textContent=JOBS.length;
+function ix(i){return (i/(JOBS.length-1)*100).toFixed(2)}
+function dur(j){var e=j.e||NOW,m=(e[0]-j.s[0])*12+(e[1]-j.s[1])+1,y=Math.floor(m/12),r=m%12;
+ return (y?y+(y>1?U("yn"):U("y1")):"")+(y&&r?U("and"):"")+(r?r+(r>1?U("mn"):U("m1")):"")}
+var JC=makeCarousel({root:document.querySelector("#trayectoria .car"),vp:vp,prev:document.getElementById("prev"),next:document.getElementById("next"),ci:document.getElementById("ci"),play:document.getElementById("play"),fill:document.getElementById("autofill"),count:document.getElementById("count"),ms:3000,
+ onMark:function(i){rail.querySelectorAll("button").forEach(function(b,k){b.classList.toggle("on",k===i);b.classList.toggle("past",k<i);if(k===i)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current")});var f=document.getElementById("fill");if(f)f.style.width=ix(i)+"%"}});
+JC.n=JOBS.length;
+rail.addEventListener("click",function(e){var b=e.target.closest("button[data-i]");if(b){JC.go(+b.dataset.i);JC.sched()}});
+function renderJobs(){
+ var M=U("months"),rh='<div class="base"></div><div class="fill" id="fill"></div>';
+ JOBS.forEach(function(j,i){
+  if(i===0||j.s[0]!==JOBS[i-1].s[0])rh+='<span class="yr" style="left:'+ix(i)+'%"><span class="full">'+j.s[0]+'</span><span class="short">’'+String(j.s[0]).slice(2)+'</span></span>';
+  rh+='<button type="button" data-i="'+i+'" style="left:'+ix(i)+'%" aria-label="'+L(j.r)+', '+L(j.o)+', '+j.s[0]+'"></button>';
+ });
+ rail.innerHTML=rh;
+ vp.innerHTML=JOBS.map(function(j,i){
+  var when=M[j.s[1]-1]+" "+j.s[0]+" – "+(j.e?M[j.e[1]-1]+" "+j.e[0]:U("now"));
+  return '<article class="slide" role="group" aria-roledescription="'+U("jobRole")+'" aria-label="'+(i+1)+U("of")+JOBS.length+'"><div><p class="when">'+when+(j.e?'':'<span class="tagnow">'+U("current")+'</span>')+'</p><p class="dur">'+dur(j)+'</p><h3>'+L(j.r)+'</h3><p class="org">'+L(j.o)+'</p></div><p class="sdesc">'+L(j.b)+'</p></article>';
+ }).join('');
+ var k=JC.cur<0?0:JC.cur;JC.cur=-1;JC.mark(k);vp.scrollLeft=k*vp.clientWidth;
+}
+
+/* ---------- Projects (5 s) ---------- */
+var pvp=document.getElementById("pvp"),pdots=document.getElementById("pdots");
+document.getElementById("pcn").textContent=PROJ.length;
+var PC=makeCarousel({root:document.getElementById("pcar"),vp:pvp,prev:document.getElementById("pprev"),next:document.getElementById("pnext"),ci:document.getElementById("pci"),play:document.getElementById("pplay"),fill:document.getElementById("pautofill"),count:document.getElementById("pcount"),ms:5000,
+ onMark:function(i){pdots.querySelectorAll("button").forEach(function(b,k){b.setAttribute("aria-current",String(k===i))});
+  pvp.querySelectorAll("video").forEach(function(v){if(!v.paused)v.pause()})}});
+PC.n=PROJ.length;
+pdots.addEventListener("click",function(e){var b=e.target.closest("button[data-i]");if(b){PC.go(+b.dataset.i);PC.sched()}});
+function media(p){
+ var en=LANG==="en";
+ if(p.video)return '<figure class="reel"><video controls playsinline preload="metadata" poster="'+p.poster+'" width="1080" height="1920" aria-label="'+(en?"64-second reel on poverty and voting in Brazil, narrated with a cloned voice":"Reel de 64 segundos sobre pobreza y voto en Brasil, narrado con voz clonada")+'"><source src="'+p.video+'" type="video/mp4"></video><figcaption>'+(en?"64 s reel · AI-cloned voice":"Reel de 64 s · voz clonada con IA")+'</figcaption></figure>';
+ if(p.imgs)return '<div class="sat'+(p.one?' one':'')+'">'+p.imgs.map(function(x){return '<figure><img src="'+x[0]+'" alt="'+L(x[3])+'" loading="lazy"><figcaption><b>'+L(x[1])+'</b> · '+L(x[2])+'</figcaption></figure>'}).join('')+'</div>';
+ if(p.drop)return '<div style="display:grid;gap:10px;width:100%"><div class="drop" role="img" aria-label="'+(en?"MarkItDown Drop flow: PDF, Word, PowerPoint and Excel files go into the icon and come out as Markdown":"Flujo de MarkItDown Drop: archivos PDF, Word, PowerPoint y Excel entran al ícono y salen como Markdown")+'"><div class="chips2"><span>PDF</span><span>DOCX</span><span>PPTX</span><span>XLSX</span></div><span class="arr" aria-hidden="true">→</span><img src="markitdown-icon.png" alt="" width="84" height="84"><span class="arr" aria-hidden="true">→</span><div class="chips2 out"><span>.md</span></div></div><pre class="term">Folder: C:\\Informes\n  informe_2025.pdf   <i>OK</i>\n  presupuesto.xlsx   <i>OK</i>\n  taller.pptx        <i>OK</i>\n\nDone: 3 converted, 0 failed.</pre><p class="cap">'+(en?"Sample console output":"Salida de ejemplo en la consola")+'</p></div>';
+ return '<div class="bigfig"><div class="fig">'+p.f+'</div><p class="figl">'+L(p.fl)+'</p></div>';
+}
+function renderProjects(){
+ pvp.innerHTML=PROJ.map(function(p,i){
+  var hasMedia=p.video||p.imgs||p.drop;
+  var links=p.l.length?p.l.map(function(x){return '<a href="'+x[1]+'">'+L(x[0])+' ↗</a>'}).join(''):'<span class="mono">'+L(p.note)+'</span>';
+  return '<article class="pslide" role="group" aria-roledescription="'+U("projRole")+'" aria-label="'+(i+1)+U("of")+PROJ.length+': '+L(p.short)+'"><div class="pmedia">'+media(p)+'</div><div class="pinfo"><p class="mono">'+L(p.label)+'</p>'+(hasMedia?'<div class="fig">'+p.f+'</div><p class="figl">'+L(p.fl)+'</p>':'')+'<h3>'+L(p.q)+'</h3><p class="desc">'+L(p.d)+'</p><ul class="tools">'+p.tl.map(function(x){return '<li>'+L(x)+'</li>'}).join('')+'</ul><div class="links">'+links+'</div></div></article>';
+ }).join('');
+ pdots.innerHTML=PROJ.map(function(p,i){return '<button type="button" data-i="'+i+'" aria-current="false">'+L(p.short)+'</button>'}).join('');
+ pvp.querySelectorAll("video").forEach(function(v){v.addEventListener("play",function(){PC.setMedia(true)});v.addEventListener("pause",function(){PC.setMedia(false)});v.addEventListener("ended",function(){PC.setMedia(false)})});
+ var k=PC.cur<0?0:PC.cur;PC.cur=-1;PC.mark(k);pvp.scrollLeft=k*pvp.clientWidth;
+}
+
+/* ---------- Travel map ---------- */
+var tipc=document.getElementById("tipc"),tipm=document.getElementById("tipm"),tr=document.getElementById("trips"),picked=null;
 function pick(id){
- var v=VIS[id];if(!v)return;tipc.textContent=v.c;tipm.textContent=v.n||CONT[v.k];
+ var v=VIS[id];if(!v)return;picked=id;tipc.textContent=L(v.c);tipm.textContent=v.n?L(v.n):L(CONT[v.k]);
  tr.querySelectorAll(".chip").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.id===id))});
  if(window.d3)d3.selectAll("#map .v").classed("sel",function(d){return (d.id||d[0])===id});
+}
+function renderTrips(){
+ document.getElementById("tripline").textContent=TRIPS.length+U("trip");
+ tr.innerHTML=Object.keys(CONT).map(function(k){
+  var LL=TRIPS.filter(function(t){return t[2]===k});
+  return '<div class="cont"><p class="mono">'+L(CONT[k])+' · '+LL.length+'</p><div class="chips">'+LL.map(function(t){return '<button type="button" class="chip" aria-pressed="false" data-id="'+t[0]+'">'+L(t[1])+'</button>'}).join('')+'</div></div>';
+ }).join('');
+ if(picked)pick(picked);else{tipc.textContent=U("tapCountry");tipm.textContent=U("knownGreen")}
 }
 tr.addEventListener("click",function(e){var b=e.target.closest(".chip");if(b)pick(b.dataset.id)});
 var WORLD=fetch("world.json").then(function(r){return r.json()});
@@ -645,9 +863,9 @@ WORLD.then(function(w){
   .attr("cx",function(t){return proj(t[3])[0]}).attr("cy",function(t){return proj(t[3])[1]}).attr("r",4)
   .attr("fill","var(--sage)").attr("stroke","var(--card)").attr("stroke-width",1.2)
   .on("click",function(e,t){pick(t[0])});
-}).catch(function(){tipc.textContent="No se pudo cargar el mapa";tipm.textContent="La lista de países sigue disponible"});
+}).catch(function(){tipc.textContent=U("mapErr");tipm.textContent=U("mapErr2")});
 
-/* Hero dot-matrix map: South America in sage, Peru in sand, Lima marked */
+/* ---------- Hero dot-matrix map ---------- */
 var hm=document.getElementById("heromap"),SA_IDS=["032","068","076","152","170","218","328","600","604","740","858","862","254"],SAF=null,PER=null;
 function drawHero(){
  if(!SAF)return;
@@ -669,11 +887,11 @@ function drawHero(){
  }}
  g.globalAlpha=1;
  if(narrow||dim)return;
- var L=proj([-77.04,-12.05]);
- g.beginPath();g.arc(L[0],L[1],12,0,6.2832);g.fillStyle="rgba(193,162,123,.2)";g.fill();
- g.beginPath();g.arc(L[0],L[1],4.5,0,6.2832);g.fillStyle="#F2EFE8";g.fill();
- if(!narrow){g.strokeStyle="rgba(193,162,123,.6)";g.lineWidth=1;g.beginPath();g.moveTo(L[0]-9,L[1]);g.lineTo(L[0]-64,L[1]);g.stroke();
-  g.fillStyle="#C1A27B";g.font="11px 'IBM Plex Mono',monospace";g.textAlign="right";g.fillText("LIMA",L[0]-70,L[1]+4);}
+ var Lm=proj([-77.04,-12.05]);
+ g.beginPath();g.arc(Lm[0],Lm[1],12,0,6.2832);g.fillStyle="rgba(193,162,123,.2)";g.fill();
+ g.beginPath();g.arc(Lm[0],Lm[1],4.5,0,6.2832);g.fillStyle="#F2EFE8";g.fill();
+ g.strokeStyle="rgba(193,162,123,.6)";g.lineWidth=1;g.beginPath();g.moveTo(Lm[0]-9,Lm[1]);g.lineTo(Lm[0]-64,Lm[1]);g.stroke();
+ g.fillStyle="#C1A27B";g.font="11px 'IBM Plex Mono',monospace";g.textAlign="right";g.fillText("LIMA",Lm[0]-70,Lm[1]+4);
 }
 WORLD.then(function(w){
  var all=topojson.feature(w,w.objects.countries).features;
@@ -683,9 +901,39 @@ WORLD.then(function(w){
 var hrt;window.addEventListener("resize",function(){clearTimeout(hrt);hrt=setTimeout(drawHero,150)});
 if(document.fonts)document.fonts.ready.then(drawHero);
 
-/* Scroll reveal: elements below the fold rise into place; nothing is hidden */
+/* ---------- Copy email ---------- */
+var cp=document.getElementById("copy"),mail=document.getElementById("mail");
+cp.addEventListener("click",function(){
+ function sel(){var r=document.createRange();r.selectNodeContents(mail);var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent=U("selected")}
+ try{navigator.clipboard.writeText(mail.textContent).then(function(){cp.textContent=U("copied")},sel)}catch(e){sel()}
+});
+
+/* ---------- Apply language ---------- */
+var langBtns=[].slice.call(document.querySelectorAll(".lang button"));
+function applyLang(l,save){
+ LANG=l;document.documentElement.lang=l;
+ STATIC.forEach(function(s){document.querySelectorAll(s[0]).forEach(function(el){if(s[2])el.setAttribute(s[2],L(s[1]));else el.innerHTML=L(s[1])})});
+ document.querySelectorAll(".tabs a").forEach(function(a,i){a.lastChild.nodeValue=U("tabs")[i]});
+ var cv=document.getElementById("btn-cv"),alt=document.getElementById("cv-alt");
+ cv.href=U("cvFile");cv.setAttribute("download",U("cvFile"));document.getElementById("cv-label").textContent=U("cvLabel");
+ alt.href=U("cvOther");alt.setAttribute("download",U("cvOther"));alt.textContent=U("cvAlt");
+ cp.textContent=U("copy");
+ document.title=l==="en"?"Víctor Guardia · Evidence-based public policy":"Víctor Guardia";
+ var md=document.querySelector('meta[name="description"]');if(md)md.setAttribute("content",l==="en"?"Víctor Guardia, political scientist. Evidence-based public policy and data analysis for social and health programmes in Peru.":"Víctor Guardia, politólogo. Gestión pública y análisis de datos para programas sociales y de salud en el Perú.");
+ langBtns.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});
+ renderJobs();renderProjects();renderTrips();JC.relabel();PC.relabel();
+ if(save){try{localStorage.setItem("vg-lang",l)}catch(e){}
+  try{var u=new URL(location.href);if(l==="en")u.searchParams.set("lang","en");else u.searchParams.delete("lang");history.replaceState(null,"",u.toString())}catch(e){}}
+ drawHero();
+}
+langBtns.forEach(function(b){b.addEventListener("click",function(){if(b.dataset.lang!==LANG)applyLang(b.dataset.lang,true)})});
+applyLang(LANG,false);
+JC.setOn(!matchMedia("(prefers-reduced-motion: reduce)").matches);
+PC.setOn(!matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+/* ---------- Scroll reveal ---------- */
 (function(){
- var els=[].slice.call(document.querySelectorAll(".sec-head,.profile .big,.prose,.car,.rail,.edu li,.logos,.proj,.likes li,.mapcard,.trips,.contact h2,.mailrow"));
+ var els=[].slice.call(document.querySelectorAll(".sec-head,.profile .big,.prose,.car,.rail,.edu li,.logos,.likes li,.mapcard,.trips,.contact h2,.mailrow,.pdots"));
  if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
  var vh=window.innerHeight;
  els.forEach(function(el,i){if(el.getBoundingClientRect().top>vh*0.9){el.classList.add("rv");el.style.transitionDelay=((i%3)*70)+"ms"}});
@@ -693,16 +941,11 @@ if(document.fonts)document.fonts.ready.then(drawHero);
  els.forEach(function(el){if(el.classList.contains("rv"))io.observe(el)});
 })();
 
-var cp=document.getElementById("copy"),mail=document.getElementById("mail");
-cp.addEventListener("click",function(){
- function sel(){var r=document.createRange();r.selectNodeContents(mail);var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent="Seleccionado: copia con Ctrl+C"}
- try{navigator.clipboard.writeText(mail.textContent).then(function(){cp.textContent="Copiado"},sel)}catch(e){sel()}
-});
-
+/* ---------- Bottom tabs ---------- */
 var tabs=[].slice.call(document.querySelectorAll(".tabs a")),ids=tabs.map(function(a){return a.getAttribute("href").slice(1)});
 if("IntersectionObserver" in window){
- var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var k=ids.indexOf(en.target.id);if(k>-1)tabs.forEach(function(a,i){a.classList.toggle("on",i===k)})}})},{rootMargin:"-45% 0px -50% 0px"});
- ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+ var io2=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var k=ids.indexOf(en.target.id);if(k>-1)tabs.forEach(function(a,i){a.classList.toggle("on",i===k)})}})},{rootMargin:"-45% 0px -50% 0px"});
+ ids.forEach(function(id){var el=document.getElementById(id);if(el)io2.observe(el)});
 }
 })();
 </script>
