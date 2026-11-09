@@ -854,7 +854,7 @@ function media(p){
 }
 function renderProjects(){
  pvp.innerHTML=PROJ.map(function(p,i){
-  var hasMedia=p.video||p.imgs||p.drop;
+  var hasMedia=p.video||p.imgs||p.drop||p.agent;
   var links=p.l.length?p.l.map(function(x){return '<a href="'+x[1]+'">'+L(x[0])+' ↗</a>'}).join(''):'<span class="mono">'+L(p.note)+'</span>';
   return '<article class="pslide" role="group" aria-roledescription="'+U("projRole")+'" aria-label="'+(i+1)+U("of")+PROJ.length+': '+L(p.short)+'"><div class="pmedia">'+media(p)+'</div><div class="pinfo"><p class="mono">'+L(p.label)+'</p>'+(hasMedia?'<div class="fig">'+p.f+'</div><p class="figl">'+L(p.fl)+'</p>':'')+'<h3>'+L(p.q)+'</h3><p class="desc">'+L(p.d)+'</p><ul class="tools">'+p.tl.map(function(x){return '<li>'+L(x)+'</li>'}).join('')+'</ul><div class="links">'+links+'</div></div></article>';
  }).join('');
