@@ -408,6 +408,23 @@ a{color:inherit}
 .pslide .links a:hover{text-decoration:underline;text-underline-offset:3px}
 .pslide .drop{background:transparent;padding:0}
 .pslide .term{width:100%}
+.agent{width:100%;max-width:440px;display:grid;justify-items:center;gap:8px}
+.ag-row{display:flex;align-items:center;justify-content:center;gap:10px;width:100%}
+.ag-row.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ag-n{font:500 .8125rem/1.3 var(--f-body);color:#F2EFE8;background:rgba(242,239,232,.1);border:1px solid rgba(242,239,232,.22);border-radius:10px;padding:9px 12px;text-align:center;display:grid;gap:3px}
+.ag-n.core{background:#D97757;border-color:#D97757;color:#1E3330;font-weight:600}
+.ag-n.tool b{font-weight:600}
+.ag-n.tool small{font-family:var(--f-mono);font-size:.625rem;letter-spacing:.03em;color:rgba(242,239,232,.7)}
+.ag-n.out{background:var(--gold);border-color:var(--gold);color:#1E3330;font-weight:600}
+.agent .arr,.ag-down{color:var(--gold);font-size:1.1rem;line-height:1}
+.ag-ab{width:100%;margin-top:12px;padding-top:12px;border-top:1px solid rgba(242,239,232,.16);display:grid;gap:8px}
+.ag-ab .cap{margin:0 0 2px}
+.ag-bar{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) auto;align-items:center;gap:10px;font-size:.75rem;color:rgba(242,239,232,.78)}
+.ag-bar .trk{height:10px;border-radius:99px;background:rgba(242,239,232,.12);overflow:hidden}
+.ag-bar .trk i{display:block;height:100%;border-radius:99px;background:#9FB2AA}
+.ag-bar.on .trk i{background:var(--gold)}
+.ag-bar b{font-family:var(--f-mono);font-weight:500;color:#F2EFE8}
+.ag-bar.on b{color:var(--gold)}
 .pdots{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
 .pdots button{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font:500 .75rem/1 var(--f-body);padding:8px 12px;border-radius:999px;cursor:pointer;min-height:34px;transition:background .2s,color .2s,border-color .2s}
 .pdots button[aria-current="true"]{background:var(--ink);color:var(--on-accent);border-color:var(--ink)}
@@ -450,7 +467,7 @@ a{color:inherit}
     <div class="facts" role="list">
       <div role="listitem"><b>10+</b><span>años en gestión pública</span></div>
       <div role="listitem"><b>9</b><span>instituciones públicas y de cooperación</span></div>
-      <div role="listitem"><b>8</b><span>proyectos de datos y evidencia</span></div>    </div>
+      <div role="listitem"><b>9</b><span>proyectos de datos y evidencia</span></div>    </div>
   </div>
 </section>
 
@@ -729,6 +746,12 @@ var PROJ=[
   q:{es:"¿Pueden unas skills de Claude Code limpiar y mapear la ENAHO siempre igual?",en:"Can Claude Code skills clean and map Peru’s household survey the same way every time?"},
   d:{es:"Tres skills de Claude Code convierten la Encuesta Nacional de Hogares 2024 del INEI en una base de personas, gráficos por área, sexo o edad y un mapa de pobreza por departamento. El resultado es el mismo cada vez y coincide con las cifras oficiales.",en:"Three Claude Code skills turn INEI’s 2024 National Household Survey into a person-level dataset, charts by area, sex or age, and a poverty map by department. The result is the same every time and matches the official figures."},
   tl:["Claude Code","ENAHO","uv"],l:[[{es:"Repositorio",en:"Repository"},"https://github.com/vguardiaf/enaho-skill"]]},
+ {short:{es:"Agente MCP del BCRP",en:"BCRP MCP agent"},label:{es:"Agente de investigación · 2026",en:"Research agent · 2026"},agent:1,
+  f:"10/10",fl:{es:"respuestas correctas con MCP y Skills (sin ellas: 1/10)",en:"correct answers with MCP and Skills (without them: 1/10)"},
+  q:{es:"¿La profundización financiera se asocia con menos pobreza en los departamentos del Perú?",en:"Is financial deepening associated with less poverty across Peru’s departments?"},
+  d:{es:"Construí un agente sobre Claude Code que responde con datos oficiales y nunca de memoria: un servidor MCP propio consulta las series del BCRP y unas Skills procesan los microdatos de la ENAHO 2024. El crédito y los depósitos por habitante se asocian con menos pobreza (Spearman −0,57; −0,74 sin Lima ni Callao). Es una asociación, no un efecto causal.",
+     en:"I built an agent on Claude Code that answers with official data and never from memory: my own MCP server queries BCRP series and Skills process the 2024 ENAHO microdata. Credit and deposits per person are associated with less poverty (Spearman −0.57; −0.74 without Lima and Callao). It is an association, not a causal effect."},
+  tl:["Claude Code","MCP (FastMCP)","BCRP","ENAHO","pandas","pytest"],l:[[{es:"Informe",en:"Report"},GH.replace("tree","blob")+"tarea_4/informes/informe_final.md"],[{es:"Código",en:"Code"},GH+"tarea_4"]]},
  {short:"MarkItDown Drop",label:{es:"Herramienta · MarkItDown Drop",en:"Tool · MarkItDown Drop"},drop:1,
   f:"15",fl:{es:"formatos: PDF, Word, PowerPoint, Excel, HTML y más",en:"formats: PDF, Word, PowerPoint, Excel, HTML and more"},
   q:{es:"¿Cómo convertir cualquier documento en texto listo para analizar o usar con IA?",en:"How do you turn any document into text ready for analysis or AI?"},
@@ -817,6 +840,15 @@ function media(p){
  var en=LANG==="en";
  if(p.video)return '<figure class="reel"><video controls playsinline preload="metadata" poster="'+p.poster+'" width="1080" height="1920" aria-label="'+(en?"64-second reel on poverty and voting in Brazil, narrated with a cloned voice":"Reel de 64 segundos sobre pobreza y voto en Brasil, narrado con voz clonada")+'"><source src="'+p.video+'" type="video/mp4"></video><figcaption>'+(en?"64 s reel · AI-cloned voice":"Reel de 64 s · voz clonada con IA")+'</figcaption></figure>';
  if(p.imgs)return '<div class="sat'+(p.one?' one':'')+'">'+p.imgs.map(function(x){return '<figure><img src="'+x[0]+'" alt="'+L(x[3])+'" loading="lazy"><figcaption><b>'+L(x[1])+'</b> · '+L(x[2])+'</figcaption></figure>'}).join('')+'</div>';
+ if(p.agent)return '<div class="agent" role="img" aria-label="'+(en?"Agent architecture: a question goes to Claude Code, which uses an MCP server for BCRP data and Skills for ENAHO microdata, and writes a report. A/B test with 10 questions: 1 of 10 correct without tools, 10 of 10 with them.":"Arquitectura del agente: una pregunta llega a Claude Code, que usa un servidor MCP para los datos del BCRP y Skills para los microdatos de la ENAHO, y escribe un informe. Prueba A/B con 10 preguntas: 1 de 10 correctas sin herramientas y 10 de 10 con ellas.")+'">'
+  +'<div class="ag-row"><span class="ag-n">'+(en?"Question":"Pregunta")+'</span><span class="arr" aria-hidden="true">→</span><span class="ag-n core">Claude Code</span></div>'
+  +'<span class="ag-down" aria-hidden="true">↓</span>'
+  +'<div class="ag-row two"><span class="ag-n tool"><b>MCP · BCRP</b><small>'+(en?"5 tools · official API":"5 herramientas · API oficial")+'</small></span><span class="ag-n tool"><b>Skills · ENAHO 2024</b><small>'+(en?"clean · chart · map · cross":"limpiar · graficar · mapear · cruzar")+'</small></span></div>'
+  +'<span class="ag-down" aria-hidden="true">↓</span>'
+  +'<div class="ag-row"><span class="ag-n out">'+(en?"Report with verified figures":"Informe con cifras verificadas")+'</span></div>'
+  +'<div class="ag-ab"><p class="cap">'+(en?"A/B test · same 10 questions":"Prueba A/B · mismas 10 preguntas")+'</p>'
+  +'<div class="ag-bar"><span class="lbl">'+(en?"Without MCP or Skills":"Sin MCP ni Skills")+'</span><span class="trk"><i style="width:10%"></i></span><b>1/10</b></div>'
+  +'<div class="ag-bar on"><span class="lbl">'+(en?"With MCP and Skills":"Con MCP y Skills")+'</span><span class="trk"><i style="width:100%"></i></span><b>10/10</b></div></div></div>';
  if(p.drop)return '<div style="display:grid;gap:10px;width:100%"><div class="drop" role="img" aria-label="'+(en?"MarkItDown Drop flow: PDF, Word, PowerPoint and Excel files go into the icon and come out as Markdown":"Flujo de MarkItDown Drop: archivos PDF, Word, PowerPoint y Excel entran al ícono y salen como Markdown")+'"><div class="chips2"><span>PDF</span><span>DOCX</span><span>PPTX</span><span>XLSX</span></div><span class="arr" aria-hidden="true">→</span><img src="markitdown-icon.png" alt="" width="84" height="84"><span class="arr" aria-hidden="true">→</span><div class="chips2 out"><span>.md</span></div></div><pre class="term">Folder: C:\\Informes\n  informe_2025.pdf   <i>OK</i>\n  presupuesto.xlsx   <i>OK</i>\n  taller.pptx        <i>OK</i>\n\nDone: 3 converted, 0 failed.</pre><p class="cap">'+(en?"Sample console output":"Salida de ejemplo en la consola")+'</p></div>';
  return '<div class="bigfig"><div class="fig">'+p.f+'</div><p class="figl">'+L(p.fl)+'</p></div>';
 }
